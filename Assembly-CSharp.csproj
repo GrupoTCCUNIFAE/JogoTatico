@@ -55,6 +55,8 @@
      <Compile Include="Assets\Scripts\CameraFixa.cs" />
      <Compile Include="Assets\Scripts\CameraPorArea.cs" />
      <Compile Include="Assets\Scripts\CameraRotativa.cs" />
+     <Compile Include="Assets\Scripts\Controls.cs" />
+     <Compile Include="Assets\Scripts\HorarioNormal.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

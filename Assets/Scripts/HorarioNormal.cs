@@ -4,32 +4,31 @@ using UnityEngine;
 
 public class HorarioNormal : MonoBehaviour {
 
-    public GameObject obj;
-    public float tempoRotacaoM = 5.0f;
-    private float tempoR = 0.0f; 
+    public float minutosDoCiclo;
 
-    public float tempo = 0.0f;
+	private Transform luz;
+	private float tempoRotacao;
+	private float tempoAtualSegundos = 0.0f;
+	private int horaAtual;
 
+	void Start()
+	{
+		tempoRotacao = 360 / (minutosDoCiclo * 60);
+		luz = gameObject.GetComponent<Transform> ();
+	}
 
-
-
-    // Use this for initialization
-    void Start()
-    {
-        tempoR = 360 / (tempoRotacaoM * 60);
-    }
-
-    // Update is called once per frame
     void Update()
     {
+		float cicloEmSegundos = minutosDoCiclo * 60;
+		float porcentagelAtual = tempoAtualSegundos/(cicloEmSegundos/100);
 
-        //24 horas em 5 minutos
+		horaAtual = (int)(porcentagelAtual*0.24f);
+		tempoAtualSegundos +=  Time.deltaTime;
+		luz.Rotate(tempoRotacao * Time.deltaTime, 0, 0);
 
-        tempo +=  Time.deltaTime;
-        obj.transform.Rotate(tempoR * Time.deltaTime, 0, 0);
-        if(tempo >= 300.0f)
-        {
-            tempo = 0.0f;
+		if(tempoAtualSegundos >= minutosDoCiclo*60)
+		{
+			tempoAtualSegundos = 0.0f;
         }
-    }
+	}
 }
