@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HorarioNormal : MonoBehaviour {
 
-    public float minutosDoCiclo;
+	public float minutosDoCiclo;
 
 	private Transform luz;
 	private float tempoRotacao;
@@ -17,8 +17,8 @@ public class HorarioNormal : MonoBehaviour {
 		luz = gameObject.GetComponent<Transform> ();
 	}
 
-    void Update()
-    {
+	void Update()
+	{
 		float cicloEmSegundos = minutosDoCiclo * 60;
 		float porcentagelAtual = tempoAtualSegundos/(cicloEmSegundos/100);
 
@@ -29,6 +29,6 @@ public class HorarioNormal : MonoBehaviour {
 		if(tempoAtualSegundos >= minutosDoCiclo*60)
 		{
 			tempoAtualSegundos = 0.0f;
-        }
+		}
 	}
 }
