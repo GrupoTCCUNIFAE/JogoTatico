@@ -12,7 +12,7 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 		turno = combate.turnos [0];
 		turno.AdicionarAcao (new AcaoDeTeste (1));
 		turno.AdicionarAcao (new AcaoDeTeste (2));
-		turno.rodar = true;
+		turno.Rodar = true;
 	}
 	
 

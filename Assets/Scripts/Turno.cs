@@ -22,13 +22,14 @@ public class Turno{
 		{			
 			acoes[acaoAtual].Update();
 
-			if(acoes[acaoAtual].finalizado)
+			if(acoes[acaoAtual].Finalizado)
 				acaoAtual++;
 		}		
 	}
 
 	public void AdicionarAcao(Acao acao)
 	{
+		acao.DonoDaAcao = donoDoTurno;
 		acoes.Add(acao);
 	}
 
@@ -53,7 +54,7 @@ public class Turno{
 		acaoAtual = 0;
 	}
 
-	public bool rodar{
+	public bool Rodar{
 		get{ return rodarAcoes; }
 		set{ rodarAcoes = value; }
 	}
