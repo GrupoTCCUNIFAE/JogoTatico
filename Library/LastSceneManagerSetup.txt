@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Cena/CenaDeCamera.unity
+- path: Assets/Cenas/CenaDeCamera.unity
   isLoaded: 1
   isActive: 1
