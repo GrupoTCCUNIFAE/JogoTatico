@@ -6,6 +6,7 @@ public abstract class Acao{
 
 	private bool fim = false;
 	private GameObject donoDaAcao;
+	private string nome;
 
 	public virtual void Update()
 	{
@@ -18,7 +19,14 @@ public abstract class Acao{
 		set{fim = value;}
 	}
 
-	public GameObject DonoDaAcao{
+	public string Nome
+	{
+		get{return nome;}
+		set{nome = value;}
+	}
+
+	public GameObject DonoDaAcao
+	{
 		get{return donoDaAcao;}
 		set{donoDaAcao = value;}
 	}

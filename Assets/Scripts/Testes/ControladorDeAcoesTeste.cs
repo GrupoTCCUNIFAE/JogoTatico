@@ -4,19 +4,29 @@ using UnityEngine;
 
 public class ControladorDeAcoesTeste : MonoBehaviour {
 
-	public Combate combate;
+	public ControladorDeFeiticos controladorDeFeiticos;
+	public TextMesh texto;
 
-	private Turno turno;
+	private Feitico feitico;
 
 	void Start () {
-		turno = combate.turnos [0];
-		turno.AdicionarAcao (new AcaoDeTeste (1));
-		turno.AdicionarAcao (new AcaoDeTeste (2));
-		turno.Rodar = true;
+		feitico = controladorDeFeiticos.feiticos [0];
 	}
-	
 
 	void Update () {
-		
+		if (!feitico.Rodar)
+		{
+			if (Input.GetKeyDown (KeyCode.Space))
+				feitico.Rodar = true;
+			if (Input.GetKeyDown (KeyCode.D))
+				feitico.AdicionarAcao (new Mover (new Vector2 (20, 0), 5, "Mover para a direita"));
+			if (Input.GetKeyDown (KeyCode.A))
+				feitico.AdicionarAcao (new Mover (new Vector2 (-20, 0), 5, "Mover para a esquerda"));
+			if (Input.GetKeyDown (KeyCode.S))
+				feitico.AdicionarAcao (new Mover (new Vector2 (0, -20), 5, "Mover para a tras"));
+			if (Input.GetKeyDown (KeyCode.W))
+				feitico.AdicionarAcao (new Mover (new Vector2 (0, 20), 5, "Mover para a frente"));
+		}
+		texto.text = feitico.printAcoes ();
 	}
 }
