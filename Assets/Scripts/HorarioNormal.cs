@@ -31,4 +31,8 @@ public class HorarioNormal : MonoBehaviour {
 			tempoAtualSegundos = 0.0f;
 		}
 	}
+
+	public int Hora{
+		get{return horaAtual;}
+	}
 }

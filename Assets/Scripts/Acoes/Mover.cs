@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Mover : Acao {
 
-	private Vector2 direcao;
+	private int direcao;
 	private float distancia;
 	private float distanciaAtual = 0;
 
-	public Mover(Vector2 direcao, float distancia, string nome){
+	public Mover(int direcao, float distancia, string nome){
+		Id = (int)(Mathf.Sign(direcao)*1);
 		this.direcao = direcao;
 		this.distancia = distancia;
 		Nome = nome;
@@ -16,9 +17,8 @@ public class Mover : Acao {
 
 	public override void Update()
 	{
-		//refatorar
-		DonoDaAcao.transform.position = new Vector3 (DonoDaAcao.transform.position.x+direcao.x*Time.deltaTime,DonoDaAcao.transform.position.y,DonoDaAcao.transform.position.z+direcao.y*Time.deltaTime);
-		distanciaAtual += (direcao.x + direcao.y)*Time.deltaTime;
+		DonoDaAcao.transform.Translate (new Vector3 (0, 0, direcao*Time.deltaTime));
+		distanciaAtual += direcao*Time.deltaTime;
 
 		if (distanciaAtual >= distancia || distanciaAtual <= -distancia)
 			Finalizado = true;

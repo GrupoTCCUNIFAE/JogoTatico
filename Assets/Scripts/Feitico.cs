@@ -73,6 +73,11 @@ public class Feitico{
 		set{ rodarAcoes = value; }
 	}
 
+	public List<Acao> Acoes{
+		get{return acoes;}
+		set{acoes = value;}
+	}
+
 	public string printAcoes(){
 		string retorno = "";
 
