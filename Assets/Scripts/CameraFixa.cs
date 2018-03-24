@@ -8,12 +8,6 @@ public class CameraFixa : MonoBehaviour {
 	public int limiteParaPerto;
 	public int limiteParaLonge;
 
-	private Transform transform;
-
-	void Start () {
-		transform = gameObject.transform;
-	}
-
 	void Update () {
 		if (Input.mouseScrollDelta.y > 0) {
 			if(transform.position.y <= limiteParaLonge)

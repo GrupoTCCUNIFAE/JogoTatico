@@ -7,7 +7,7 @@ public class Virar : Acao {
 	private int direcao;
 
 	public Virar(int direcao, string nome){
-		Id = (int) (2 * (1 * Mathf.Sign (direcao)));
+		Id = "002("+Mathf.Sign (direcao)+")";
 		this.direcao = direcao;
 		Nome = nome;
 	}

@@ -52,9 +52,10 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Acao.cs" />
+     <Compile Include="Assets\Scripts\Acoes\Condicional.cs" />
      <Compile Include="Assets\Scripts\Acoes\Mover.cs" />
+     <Compile Include="Assets\Scripts\Acoes\TrocaCor.cs" />
      <Compile Include="Assets\Scripts\Acoes\Virar.cs" />
-     <Compile Include="Assets\Scripts\Acoes\VirarAzul.cs" />
      <Compile Include="Assets\Scripts\AreaDeCamera.cs" />
      <Compile Include="Assets\Scripts\CameraFixa.cs" />
      <Compile Include="Assets\Scripts\CameraPorArea.cs" />
@@ -63,7 +64,10 @@
      <Compile Include="Assets\Scripts\Controls.cs" />
      <Compile Include="Assets\Scripts\Feitico.cs" />
      <Compile Include="Assets\Scripts\HorarioNormal.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
      <Compile Include="Assets\Scripts\Testes\ControladorDeAcoesTeste.cs" />
+     <Compile Include="Assets\Scripts\Verificador.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

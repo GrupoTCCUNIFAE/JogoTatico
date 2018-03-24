@@ -9,7 +9,7 @@ public class Mover : Acao {
 	private float distanciaAtual = 0;
 
 	public Mover(int direcao, float distancia, string nome){
-		Id = (int)(Mathf.Sign(direcao)*1);
+		Id = "001("+Mathf.Sign(direcao)+")";
 		this.direcao = direcao;
 		this.distancia = distancia;
 		Nome = nome;

@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VirarAzul : Acao {
+public class TrocaCor : Acao {
 
 	private Color32 cor;
 
-	public VirarAzul(string nome){
+	public TrocaCor(string nome, Color32 cor){
 		Nome = nome;
-		Id = 3;
-		this.cor = new Color32 (21, 0, 129, 255);
+		Id = "003("+cor.r+")("+cor.g+")("+cor.b+")";
+		this.cor = cor;
 	}
 
 	public override void Update()

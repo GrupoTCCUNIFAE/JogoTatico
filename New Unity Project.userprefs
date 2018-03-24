@@ -1,14 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Acoes\VirarAzul.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Testes\ControladorDeAcoesTeste.cs">
     <Files>
-      <File FileName="Assets\Scripts\HorarioNormal.cs" Line="36" Column="24" />
-      <File FileName="Assets\Scripts\Acao.cs" Line="37" Column="18" />
-      <File FileName="Assets\Scripts\Testes\ControladorDeAcoesTeste.cs" Line="34" Column="43" />
-      <File FileName="Assets\Scripts\Acoes\Mover.cs" Line="12" Column="24" />
-      <File FileName="Assets\Scripts\Feitico.cs" Line="21" Column="46" />
-      <File FileName="Assets\Scripts\Acoes\Virar.cs" Line="19" Column="21" />
-      <File FileName="Assets\Scripts\Acoes\VirarAzul.cs" Line="11" Column="10" />
+      <File FileName="Assets\Scripts\Acoes\Virar.cs" Line="14" Column="2" />
+      <File FileName="Assets\Scripts\ControladorDeFeiticos.cs" Line="64" Column="42" />
+      <File FileName="Assets\Scripts\Verificador.cs" Line="26" Column="23" />
+      <File FileName="Assets\Scripts\Acoes\Mover.cs" Line="14" Column="30" />
+      <File FileName="Assets\Scripts\Acao.cs" Line="35" Column="15" />
+      <File FileName="Assets\Scripts\Acoes\Condicional.cs" Line="31" Column="29" />
+      <File FileName="Assets\Scripts\Testes\ControladorDeAcoesTeste.cs" Line="46" Column="47" />
+      <File FileName="Assets\Scripts\Feitico.cs" Line="28" Column="24" />
+      <File FileName="Assets\Scripts\Acoes\TrocaCor.cs" Line="18" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

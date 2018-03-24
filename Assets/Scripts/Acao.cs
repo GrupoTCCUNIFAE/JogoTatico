@@ -7,7 +7,7 @@ public abstract class Acao{
 	private bool fim = false;
 	private GameObject donoDaAcao;
 	private string nome;
-	private int id;
+	private string id;
 
 	public virtual void Update()
 	{
@@ -32,7 +32,7 @@ public abstract class Acao{
 		set{donoDaAcao = value;}
 	}
 
-	public int Id{
+	public string Id{
 		get{return id;}
 		set{id = value;}
 	}
