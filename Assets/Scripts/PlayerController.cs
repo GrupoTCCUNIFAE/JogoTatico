@@ -9,14 +9,13 @@ using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour {
 	
 	public LayerMask movementMask;		// The ground
+	public Camera cam;
 
 	PlayerMotor motor;		// Reference to our motor
-	Camera cam;				// Reference to our camera
 
 	// Get references
 	void Start (){
 		motor = GetComponent<PlayerMotor>();
-		cam = Camera.main;
 	}
 
 	// Update is called once per frame

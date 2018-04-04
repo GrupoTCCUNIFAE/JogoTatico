@@ -17,10 +17,11 @@ public class Mover : Acao {
 
 	public override void Update()
 	{
-		DonoDaAcao.transform.Translate (new Vector3 (0, 0, direcao*Time.deltaTime));
-		distanciaAtual += direcao*Time.deltaTime;
-
 		if (distanciaAtual >= distancia || distanciaAtual <= -distancia)
 			Finalizado = true;
+		
+		DonoDaAcao.transform.Translate (new Vector3 (0, 0, direcao*Time.deltaTime));
+
+		distanciaAtual += direcao*Time.deltaTime;
 	}
 }

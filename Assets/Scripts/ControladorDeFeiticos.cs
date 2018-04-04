@@ -58,7 +58,7 @@ public class ControladorDeFeiticos : MonoBehaviour {
 				byte corRed = byte.Parse (argumentos [1]);
 				byte corGreen = byte.Parse (argumentos [3]);
 				byte corBlue = byte.Parse (argumentos [5]);
-				return new TrocaCor ("Mudar de cor(Azul)", new Color32 (corRed, corGreen, corBlue, 255));
+				return new TrocaCor ("Mudar de cor", new Color32 (corRed, corGreen, corBlue, 255));
 			case 4://Condicional
 				List<Acao> verdadeiras = new List<Acao>();
 				List<Acao> falsas = new List<Acao>();

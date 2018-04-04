@@ -38,7 +38,15 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 				if (Input.GetKeyDown (KeyCode.C))
 					controladorDeFeiticos.Salvar (0);
 				if (Input.GetKeyDown (KeyCode.Q))
-					feitico.AdicionarAcao (new TrocaCor ("Cor azul", new Color32 (21, 0, 129, 255)));
+					feitico.AdicionarAcao (new TrocaCor ("Cor Verde", new Color32 (0, 255, 0, 255)));
+				if (Input.GetKeyDown (KeyCode.Alpha2))
+					feitico.AdicionarAcao (new TrocaCor ("Cor Vermelha", new Color32 (255, 0, 0, 255)));
+				if (Input.GetKeyDown (KeyCode.Alpha3))
+					feitico.AdicionarAcao (new TrocaCor ("Cor Azul", new Color32 (0, 0, 255, 255)));
+				if (Input.GetKeyDown (KeyCode.Alpha4))
+					feitico.AdicionarAcao (new TrocaCor ("Cor Amarela", new Color32 (255, 255, 0, 255)));
+				if (Input.GetKeyDown (KeyCode.Alpha5))
+					feitico.AdicionarAcao (new TrocaCor ("Cor Roxa", new Color32 (255, 0, 255, 255)));
 				if (Input.GetKeyDown (KeyCode.Alpha1))
 					controladorDeFeiticos.Carregar (0);
 				if (Input.GetKeyDown (KeyCode.G)) {
@@ -58,7 +66,7 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 				if (Input.GetKeyDown (KeyCode.W))
 					acoes.Add (new Mover (velocidade, 5, "Mover para a frente"));
 				if (Input.GetKeyDown (KeyCode.Q))
-					acoes.Add (new TrocaCor ("Cor azul", new Color32 (21, 0, 129, 255)));
+					acoes.Add (new TrocaCor ("Cor verde", new Color32 (0, 255, 0, 255)));
 			}
 			if (Input.GetKeyDown (KeyCode.F)) {
 				condicional = !condicional;

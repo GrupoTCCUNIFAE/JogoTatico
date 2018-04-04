@@ -14,13 +14,14 @@ public class TrocaCor : Acao {
 
 	public override void Update()
 	{
-		//refatorar
-		DonoDaAcao.GetComponentInChildren<Light>().color = cor;
-		DonoDaAcao.GetComponent<MeshRenderer>().material.color = cor;
 		ParticleSystem.MainModule mainModule = DonoDaAcao.GetComponentInChildren<ParticleSystem> ().main;
 		ParticleSystem.MinMaxGradient gradient = new ParticleSystem.MinMaxGradient ();
+
+		DonoDaAcao.GetComponentInChildren<Light>().color = cor;
+		DonoDaAcao.GetComponentInChildren<MeshRenderer>().material.color = cor;
 		gradient.color = cor;
 		mainModule.startColor = gradient;
+
 		Finalizado = true;
 	}
 }

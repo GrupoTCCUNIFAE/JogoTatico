@@ -26,7 +26,8 @@ public class Feitico{
 			if (!instanciado) 
 			{
 				instanciado = true;
-				feitico = GameObject.Instantiate (prefabFeitico, new Vector3(donoDoFeitico.transform.position.x, donoDoFeitico.transform.position.y, donoDoFeitico.transform.position.z+1), Quaternion.Euler (0, 0, 0));
+				Vector3 posicaoFeitico = new Vector3 (donoDoFeitico.transform.position.x, donoDoFeitico.transform.position.y, donoDoFeitico.transform.position.z);
+				feitico = GameObject.Instantiate (prefabFeitico, posicaoFeitico, donoDoFeitico.transform.rotation);
 				foreach (Acao acao in acoes) 
 				{
 					acao.DonoDaAcao = feitico;
