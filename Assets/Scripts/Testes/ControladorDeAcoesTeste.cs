@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ControladorDeAcoesTeste : MonoBehaviour {
 
+	public PlayerController controller;
+	public RotacaoJogador rotacao;
 	public ControladorDeFeiticos controladorDeFeiticos;
 	public TextMesh texto;
 	public int velocidade;
@@ -13,6 +15,7 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 
 	public bool condicional = false;
 
+	private bool feiticoLancado = false;
 	private Verificador verificador;
 
 	private Feitico feitico;
@@ -25,8 +28,18 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 		if (!feitico.Rodar)
 		{
 			if (!condicional) {
-				if (Input.GetKeyDown (KeyCode.Space))
-					controladorDeFeiticos.Lancar (0);
+				if (Input.GetKeyDown (KeyCode.Space)) {
+					if (feiticoLancado) {
+						feiticoLancado = false;
+						controladorDeFeiticos.Lancar (0);
+						rotacao.enabled = false;
+						controller.enabled = true;
+					} else {
+						feiticoLancado = true;
+						rotacao.enabled = true;
+						controller.enabled = false;
+					}
+				}
 				if (Input.GetKeyDown (KeyCode.A))
 					feitico.AdicionarAcao (new Virar (-90, "Curva a esquerda"));
 				if (Input.GetKeyDown (KeyCode.D))

@@ -5,10 +5,12 @@ using UnityEngine;
 public class CameraRotativa : MonoBehaviour {
 
 	public Transform centroDaCamera;
+	public Transform player;
 	public int velocidadeDeRotacao;
 	public int pontoDeRolagem;
 
 	void Update () {
+		centroDaCamera.position = new Vector3 (player.position.x, centroDaCamera.position.y, player.position.z);
 		Vector3 rotacaoCentro = centroDaCamera.rotation.eulerAngles;
 
 		if(Input.mousePosition.x < pontoDeRolagem){
