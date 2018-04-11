@@ -7,9 +7,8 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 	public PlayerController controller;
 	public RotacaoJogador rotacao;
 	public ControladorDeFeiticos controladorDeFeiticos;
-	public TextMesh texto;
 	public int velocidade;
-	public Material teste;
+	public GameObject indicadorDeMagia;
 	private List<Acao> acoes = new List<Acao> ();
 	private List<Acao> acoes2 = new List<Acao> ();
 
@@ -25,6 +24,9 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 	}
 
 	void Update () {
+		Vector3 posicao = rotacao.localDaMagia ();
+		indicadorDeMagia.transform.position = new Vector3 (posicao.x, posicao.y, posicao.z);
+
 		if (!feitico.Rodar)
 		{
 			if (!condicional) {
@@ -86,6 +88,5 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 			}
 
 		}
-		texto.text = feitico.printAcoes ();
 	}
 }

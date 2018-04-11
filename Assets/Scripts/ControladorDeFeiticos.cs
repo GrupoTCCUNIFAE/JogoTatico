@@ -37,42 +37,49 @@ public class ControladorDeFeiticos : MonoBehaviour {
 	public void Carregar(int slot){
 		feiticos [slot].Acoes = new List<Acao> ();
 
-		string algoritimoDaMagia = PlayerPrefs.GetString ("FeiticoSlot" + slot);
+		string algoritmoDaMagia = PlayerPrefs.GetString ("FeiticoSlot" + slot);
 
-		foreach (string acao in algoritimoDaMagia.Split(';')) {
-			feiticos [slot].AdicionarAcao(CriarFeitico (acao));
-		}
+		CriarFeitico (slot, algoritmoDaMagia);
 	}
 
-	private Acao CriarFeitico(string acao){
+	private Acao CriarAcao(string acao){
 		string[] argumentos;
 		int acaoConvertida;
 		if (int.TryParse (acao.Substring(0, 3), out acaoConvertida)) {
 			argumentos = acao.Split (new char[]{'(',')'}); 
-			switch (Mathf.Abs (acaoConvertida)) {
-			case 1://Mover		
-				return new Mover (int.Parse(argumentos[1]) * 10, 5, "Mover " + acao);
-			case 2://Virar
-				return new Virar ((int)(90 * int.Parse(argumentos[1])), "Virar " + 90 * Mathf.Sign (acaoConvertida));
-			case 3://Mudar de Cor
-				byte corRed = byte.Parse (argumentos [1]);
-				byte corGreen = byte.Parse (argumentos [3]);
-				byte corBlue = byte.Parse (argumentos [5]);
-				return new TrocaCor ("Mudar de cor", new Color32 (corRed, corGreen, corBlue, 255));
-			case 4://Condicional
-				List<Acao> verdadeiras = new List<Acao>();
-				List<Acao> falsas = new List<Acao>();
-				string[] acoes =  acao.Split (new char[]{'[',']'}); 
+			switch ((EnumAcoes)Mathf.Abs (acaoConvertida)) {
+				case EnumAcoes.Mover:		
+					return new Mover (int.Parse(argumentos[1]) * 10, 5, "Mover " + acao);
 
-				foreach (string acaoAtual in acoes[1].Split(',')) {
-					verdadeiras.Add(CriarFeitico (acaoAtual));
-				}
-				foreach (string acaoAtual in acoes[3].Split(',')) {
-					falsas.Add(CriarFeitico (acaoAtual));
-				}
-				return new Condicional(int.Parse(argumentos[1]), verdadeiras, falsas);
+				case EnumAcoes.Virar:
+					return new Virar ((int)(90 * int.Parse(argumentos[1])), "Virar " + 90 * Mathf.Sign (acaoConvertida));
+
+				case EnumAcoes.TrocaCor://Mudar de Cor
+					byte corRed = byte.Parse (argumentos [1]);
+					byte corGreen = byte.Parse (argumentos [3]);
+					byte corBlue = byte.Parse (argumentos [5]);
+					return new TrocaCor ("Mudar de cor", new Color32 (corRed, corGreen, corBlue, 255));
+
+				case EnumAcoes.Condicional:
+					List<Acao> verdadeiras = new List<Acao>();
+					List<Acao> falsas = new List<Acao>();
+					string[] acoes =  acao.Split (new char[]{'[',']'}); 
+
+					foreach (string acaoAtual in acoes[1].Split(',')) {
+						verdadeiras.Add(CriarAcao (acaoAtual));
+					}
+					foreach (string acaoAtual in acoes[3].Split(',')) {
+						falsas.Add(CriarAcao (acaoAtual));
+					}
+					return new Condicional(int.Parse(argumentos[1]), verdadeiras, falsas);
 			}
 		}
 		return null;
+	}
+
+	private void CriarFeitico(int slot, string algoritmo){
+		foreach (string acao in algoritmo.Split(';')) {
+			feiticos [slot].AdicionarAcao(CriarAcao (acao));
+		}
 	}
 }

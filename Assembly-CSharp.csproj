@@ -62,12 +62,14 @@
      <Compile Include="Assets\Scripts\CameraRotativa.cs" />
      <Compile Include="Assets\Scripts\ControladorDeFeiticos.cs" />
      <Compile Include="Assets\Scripts\Controls.cs" />
+     <Compile Include="Assets\Scripts\Enumerators\EnumAcoes.cs" />
      <Compile Include="Assets\Scripts\Feitico.cs" />
      <Compile Include="Assets\Scripts\HorarioNormal.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerMotor.cs" />
      <Compile Include="Assets\Scripts\RotacaoJogador.cs" />
      <Compile Include="Assets\Scripts\Testes\ControladorDeAcoesTeste.cs" />
+     <Compile Include="Assets\Scripts\Testes\ObjetoDestrutivelDeTeste.cs" />
      <Compile Include="Assets\Scripts\Verificador.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
