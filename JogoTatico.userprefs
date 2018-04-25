@@ -1,8 +1,9 @@
-﻿<Properties StartupItem="JogoTatico.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CameraFixa.cs">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interface\CriaFeitiço.cs">
     <Files>
-      <File FileName="Assets\Scripts\CameraFixa.cs" Line="14" Column="19" />
+      <File FileName="Assets\Scripts\Interface\CriaFeitiço.cs" Line="28" Column="4" />
+      <File FileName="Assets\SimpleDragAndDrop\Scripts\DragAndDropItem.cs" Line="10" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

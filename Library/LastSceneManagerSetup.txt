@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Cenas/CenaRodrigo.unity
+- path: Assets/Cenas/CenaReginaldo.unity
   isLoaded: 1
   isActive: 1
