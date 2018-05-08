@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Cenas/CenaReginaldo.unity
+- path: Assets/Cenas/CenasInterfaces/InterfacePrincipal.unity
   isLoaded: 1
   isActive: 1
