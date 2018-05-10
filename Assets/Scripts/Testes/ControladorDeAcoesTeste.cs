@@ -11,6 +11,7 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 	public GameObject indicadorDeMagia;
 	private List<Acao> acoes = new List<Acao> ();
 	private List<Acao> acoes2 = new List<Acao> ();
+	private AtaqueFisico ataque;
 
 	public bool condicional = false;
 
@@ -21,12 +22,15 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 
 	void Start () {
 		feitico = controladorDeFeiticos.feiticos [0];
+		ataque = GetComponent<AtaqueFisico> ();
 	}
 
 	void Update () {
+		Debug.DrawLine (transform.position+transform.forward, transform.position+transform.forward*3);
 		Vector3 posicao = rotacao.localDaMagia ();
 		indicadorDeMagia.transform.position = new Vector3 (posicao.x, posicao.y, posicao.z);
-
+		if (Input.GetKeyDown (KeyCode.A))
+			ataque.Atacar ();
 		if (!feitico.Rodar)
 		{
 			if (!condicional) {
@@ -42,26 +46,6 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 						controller.enabled = false;
 					}
 				}
-				if (Input.GetKeyDown (KeyCode.A))
-					feitico.AdicionarAcao (new Virar (-90, "Curva a esquerda"));
-				if (Input.GetKeyDown (KeyCode.D))
-					feitico.AdicionarAcao (new Virar (90, "Curva a direita"));
-				if (Input.GetKeyDown (KeyCode.S))
-					feitico.AdicionarAcao (new Mover (-velocidade, 5, "Mover para a tras"));
-				if (Input.GetKeyDown (KeyCode.W))
-					feitico.AdicionarAcao (new Mover (velocidade, 5, "Mover para a frente"));
-				if (Input.GetKeyDown (KeyCode.C))
-					controladorDeFeiticos.Salvar (0);
-				if (Input.GetKeyDown (KeyCode.Q))
-					feitico.AdicionarAcao (new TrocaCor ("Cor Verde", new Color32 (0, 255, 0, 255)));
-				if (Input.GetKeyDown (KeyCode.Alpha2))
-					feitico.AdicionarAcao (new TrocaCor ("Cor Vermelha", new Color32 (255, 0, 0, 255)));
-				if (Input.GetKeyDown (KeyCode.Alpha3))
-					feitico.AdicionarAcao (new TrocaCor ("Cor Azul", new Color32 (0, 0, 255, 255)));
-				if (Input.GetKeyDown (KeyCode.Alpha4))
-					feitico.AdicionarAcao (new TrocaCor ("Cor Amarela", new Color32 (255, 255, 0, 255)));
-				if (Input.GetKeyDown (KeyCode.Alpha5))
-					feitico.AdicionarAcao (new TrocaCor ("Cor Roxa", new Color32 (255, 0, 255, 255)));
 				if (Input.GetKeyDown (KeyCode.Alpha1))
 					controladorDeFeiticos.Carregar (0);
 				if (Input.GetKeyDown (KeyCode.G)) {
