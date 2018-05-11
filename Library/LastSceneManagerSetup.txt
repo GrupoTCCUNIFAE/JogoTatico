@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Cenas/CenasInterfaces/InterfacePrincipal.unity
+- path: Assets/Cenas/CenaGabriel.unity
   isLoaded: 1
   isActive: 1
