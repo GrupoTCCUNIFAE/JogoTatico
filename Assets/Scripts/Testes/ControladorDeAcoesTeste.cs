@@ -26,6 +26,7 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 	}
 
 	void Update () {
+		rotacao.enabled = true;
 		Debug.DrawLine (transform.position+transform.forward, transform.position+transform.forward*3);
 		Vector3 posicao = rotacao.localDaMagia ();
 		indicadorDeMagia.transform.position = new Vector3 (posicao.x, posicao.y, posicao.z);

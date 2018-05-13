@@ -5,17 +5,16 @@ using UnityEngine;
 public class CameraFixa : MonoBehaviour {
 
 	public int velocidadeDoZoom;
-	public int limiteParaPerto;
-	public int limiteParaLonge;
+	public Transform player;
 
 	void Update () {
+		transform.position = new Vector3 (player.position.x, transform.position.y, player.position.z);
+
 		if (Input.mouseScrollDelta.y > 0) {
-			if(transform.position.y <= limiteParaLonge)
-				transform.position = new Vector3 (transform.position.x, transform.position.y+velocidadeDoZoom*Time.deltaTime, transform.position.z-velocidadeDoZoom*Time.deltaTime);
+			GetComponent<Camera> ().orthographicSize -= velocidadeDoZoom;
 		}
 		if (Input.mouseScrollDelta.y < 0) {
-			if(transform.position.y >= limiteParaPerto)
-				transform.position = new Vector3 (transform.position.x, transform.position.y-velocidadeDoZoom*Time.deltaTime, transform.position.z+velocidadeDoZoom*Time.deltaTime);
+			GetComponent<Camera> ().orthographicSize += velocidadeDoZoom;
 		}
 	}
 }
