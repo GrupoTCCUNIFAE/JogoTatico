@@ -30,7 +30,7 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.A))
 			ataque.Atacar ();
 
-		if (Input.GetKeyDown (KeyCode.Alpha1)) {
+		if (Input.GetKeyDown (KeyCode.Alpha1) && !feitico.Rodar) {
 					controladorDeFeiticos.Carregar (0);
 					controladorDeFeiticos.Lancar (0);
 		}
