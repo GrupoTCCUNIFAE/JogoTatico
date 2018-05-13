@@ -23,8 +23,6 @@ public class PlayerMotor : MonoBehaviour {
 		agent.SetDestination(point);
 	}
 
-
-
 	void Update (){
 		if (target != null){
 			MoveToPoint (target.position);

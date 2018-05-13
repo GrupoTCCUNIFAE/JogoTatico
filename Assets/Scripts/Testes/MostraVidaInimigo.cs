@@ -5,6 +5,6 @@ using UnityEngine;
 public class MostraVidaInimigo : MonoBehaviour {
 
 	void Update () {
-		GetComponentInChildren<TextMesh> ().text = "Vida: "+GetComponent<Status> ().Vida;
+		GetComponentInChildren<TextMesh> ().text = "Vida: "+GetComponent<ControladorGeral> ().Vida;
 	}
 }

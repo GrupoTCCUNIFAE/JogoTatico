@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class AtaqueFisico : MonoBehaviour {
 
-	Status status;
+	ControladorGeral status;
 
 	void Start(){
-		status = GetComponent<Status> ();
+		status = GetComponent<ControladorGeral> ();
 	}
 
 	public bool Atacar(){
-		Status statusInimigo = GetStatus ();
+		ControladorGeral statusInimigo = GetStatus ();
 		GetComponent<Animator> ().SetTrigger ("Ataque");
 
 		if (statusInimigo != null) {
@@ -23,12 +23,12 @@ public class AtaqueFisico : MonoBehaviour {
 		return false;
 	}
 
-	private Status GetStatus(){
+	private ControladorGeral GetStatus(){
 		RaycastHit hit;
 
 		if (Physics.Linecast (transform.position+transform.forward, transform.position+transform.forward*3, out hit)) {
 			if (hit.collider.tag == "Enemie") {
-				return hit.collider.gameObject.GetComponent<Status> ();
+				return hit.collider.gameObject.GetComponent<ControladorGeral> ();
 			}
 		}
 
