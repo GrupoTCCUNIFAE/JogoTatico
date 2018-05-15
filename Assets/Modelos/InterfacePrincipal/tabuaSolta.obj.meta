@@ -1,19 +1,24 @@
 fileFormatVersion: 2
-guid: 426080c6f9e05fd408e48cf3be337541
-timeCreated: 1526415907
+guid: 18ca98e1c15b7a541bc638167fdaa7c1
+timeCreated: 1526415819
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: livro
+    100000: tabuaSolta
     100002: //RootNode
-    400000: livro
+    400000: tabuaSolta
     400002: //RootNode
     2100000: palette
-    2300000: livro
-    3300000: livro
-    4300000: livro
-  externalObjects: {}
+    2300000: tabuaSolta
+    3300000: tabuaSolta
+    4300000: tabuaSolta
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: palette
+    second: {fileID: 2100000, guid: f8fc5f16d553a3c4cafa9d0733c2a43a, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
