@@ -5,11 +5,12 @@
       <File FileName="Assets\Scripts\ControladorDeFeiticos.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Verificador.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Enumerators\EnumAcoes.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Testes\ControladorDeAcoesTeste.cs" Line="28" Column="35" />
-      <File FileName="Assets\Scripts\AtaqueFisico.cs" Line="8" Column="2" />
-      <File FileName="Assets\Scripts\ControladorGeral.cs" Line="14" Column="20" />
-      <File FileName="Assets\Scripts\PlayerMotor.cs" Line="14" Column="2" />
-      <File FileName="Assets\Scripts\Interface\CriaFeitico.cs" Line="10" Column="23" />
+      <File FileName="Assets\Scripts\Testes\ControladorDeAcoesTeste.cs" Line="33" Column="58" />
+      <File FileName="Assets\Scripts\AtaqueFisico.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ControladorGeral.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerMotor.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Interface\CriaFeitico.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Testes\CameraPerspectiva.cs" Line="9" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
