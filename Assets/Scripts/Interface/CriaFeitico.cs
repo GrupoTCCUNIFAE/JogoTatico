@@ -10,6 +10,7 @@ public class CriaFeitico : MonoBehaviour {
 	private string speel;
 
 	public void LerAcoes(){
+		speel = "";
 		for(int i =0;i<speelPanel.transform.childCount; i++){
 			Transform trans = speelPanel.transform.GetChild(i);
 			if(trans.GetComponentInChildren< DragAndDropItem>()!= null)

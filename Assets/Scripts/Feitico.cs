@@ -88,4 +88,8 @@ public class Feitico{
 
 		return retorno;
 	}
+
+	public Acao AcaoAtual{
+		get{return acoes [acaoAtual];}
+	}
 }

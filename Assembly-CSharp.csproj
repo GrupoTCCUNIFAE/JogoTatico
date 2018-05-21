@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\ControladorDeFeiticos.cs" />
      <Compile Include="Assets\Scripts\ControladorGeral.cs" />
      <Compile Include="Assets\Scripts\Controls.cs" />
+     <Compile Include="Assets\Scripts\CuboDePuzzle.cs" />
      <Compile Include="Assets\Scripts\Enumerators\EnumAcoes.cs" />
      <Compile Include="Assets\Scripts\Feitico.cs" />
      <Compile Include="Assets\Scripts\HorarioNormal.cs" />
@@ -71,6 +72,7 @@
      <Compile Include="Assets\Scripts\Interface\MudarCena.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerMotor.cs" />
+     <Compile Include="Assets\Scripts\Puzzle.cs" />
      <Compile Include="Assets\Scripts\RotacaoJogador.cs" />
      <Compile Include="Assets\Scripts\Testes\CameraPerspectiva.cs" />
      <Compile Include="Assets\Scripts\Testes\ControladorDeAcoesTeste.cs" />

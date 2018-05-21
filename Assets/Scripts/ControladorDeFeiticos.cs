@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 public class ControladorDeFeiticos : MonoBehaviour {
 
 	public Feitico[] feiticos = new Feitico[0];
+	public float dis;
 
 	void Update()
 	{
@@ -49,7 +50,7 @@ public class ControladorDeFeiticos : MonoBehaviour {
 			argumentos = acao.Split (new char[]{'(',')'}); 
 			switch ((EnumAcoes)Mathf.Abs (acaoConvertida)) {
 				case EnumAcoes.Mover:		
-					return new Mover (int.Parse(argumentos[1]) * 10, 5, "Mover " + acao);
+					return new Mover (int.Parse(argumentos[1]) * 10, dis, "Mover " + acao);
 
 				case EnumAcoes.Virar:
 					return new Virar ((int)(90 * int.Parse(argumentos[1])), "Virar " + 90 * Mathf.Sign (acaoConvertida));
@@ -80,6 +81,17 @@ public class ControladorDeFeiticos : MonoBehaviour {
 	private void CriarFeitico(int slot, string algoritmo){
 		foreach (string acao in algoritmo.Split(';')) {
 			feiticos [slot].AdicionarAcao(CriarAcao (acao));
+		}
+	}
+
+	public Feitico FeiticoAtual{
+		get{
+			foreach (Feitico feitico in feiticos) {
+				if (feitico.Rodar) {
+					return feitico;
+				}
+			}
+			return null;
 		}
 	}
 }
