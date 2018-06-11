@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 public class PlayerController : MonoBehaviour {
 	
 	public LayerMask movementMask;		// The ground
-	public Camera cam;
+    public Camera cam;
 
 	PlayerMotor motor;		// Reference to our motor
 
@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour {
 	void Update (){
 
 		// If we press left mouse
-		if (Input.GetMouseButtonDown(0)){
+		if (Input.GetMouseButton(0)){
 			// Shoot out a ray
 			Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;

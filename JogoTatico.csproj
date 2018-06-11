@@ -286,6 +286,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\scr.cs" />
     <Compile Include="Assets\Scripts\Acao.cs" />
     <Compile Include="Assets\Scripts\Acoes\Condicional.cs" />
     <Compile Include="Assets\Scripts\Acoes\Mover.cs" />
@@ -296,16 +297,20 @@
     <Compile Include="Assets\Scripts\CameraFixa.cs" />
     <Compile Include="Assets\Scripts\CameraPorArea.cs" />
     <Compile Include="Assets\Scripts\CameraRotativa.cs" />
+    <Compile Include="Assets\Scripts\Combat.cs" />
     <Compile Include="Assets\Scripts\ControladorDeFeiticos.cs" />
     <Compile Include="Assets\Scripts\ControladorGeral.cs" />
     <Compile Include="Assets\Scripts\Controls.cs" />
     <Compile Include="Assets\Scripts\CuboDePuzzle.cs" />
+    <Compile Include="Assets\Scripts\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Enumerators\EnumAcoes.cs" />
     <Compile Include="Assets\Scripts\Feitico.cs" />
     <Compile Include="Assets\Scripts\HorarioNormal.cs" />
+    <Compile Include="Assets\Scripts\Interact.cs" />
     <Compile Include="Assets\Scripts\Interface\CriaFeitico.cs" />
     <Compile Include="Assets\Scripts\Interface\MudarCena.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\PlayerMotor.cs" />
     <Compile Include="Assets\Scripts\Puzzle.cs" />
     <Compile Include="Assets\Scripts\RotacaoJogador.cs" />
