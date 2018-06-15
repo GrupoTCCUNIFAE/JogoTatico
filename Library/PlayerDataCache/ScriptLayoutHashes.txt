@@ -1,7 +1,13 @@
 WindowsStandalone
 SceneListBegin?
+Assets/Cenas/Fases/InterfacePrincipal.unity
+Assets/Cenas/Fases/Tutorial.unity
 Assets/Cenas/Fases/Fase_1.unity
+Assets/Cenas/Fases/Fase_2.unity
+Assets/Cenas/Fases/Morte.unity
 SceneListEnd?
+f0d23d0511d809ea08cbea60ec379e0e Assembly-CSharp.dll:.CharacterCombat
+fd55997e852301f8968e9a3f8d427d98 Assembly-CSharp.dll:.ControladorPlayerGUI
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8144169769d51429c4aedc8b0f92d47b UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -14,6 +20,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+2b5bd81c259c691324a17af9a3e97e85 Assembly-CSharp.dll:.PlayerManager
 0c25901a4c87e1b9d7f7487b4bf48aa0 Assembly-CSharp.dll:.CameraFixa
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -190,13 +197,15 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
 2809cef661304b40f54f7feef461469e Assembly-CSharp.dll:.CameraPorArea
 86381191d569b8d072ccc68f586b851d Assembly-CSharp.dll:.DragAndDropItem
+35c4a7aeaa5985a9da4efd6014dc0f95 Assembly-CSharp.dll:.Portal
 ae1d0a1efc9fafa7a6224471e3a513fe Assembly-CSharp.dll:.DragAndDropCell
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 2633a8647ea063bf5baed192930f5c25 Assembly-CSharp.dll:.CriaFeitico
 a8134b272d6a1be5fefe7ee1163f2755 Assembly-CSharp.dll:.HorarioNormal
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MostraVidaInimigo
-d3d25176285c9199987630aa4d146a80 Assembly-CSharp.dll:.ControladorDeAcoesTeste
+c92c3003a68b287021bbd7648d73f732 Assembly-CSharp.dll:.Enemy
+8a0d6b44c270dae51eaf01472bd5bf9c Assembly-CSharp.dll:.ControladorDeAcoesTeste
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -226,8 +235,9 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+d23107e91b06c8301dff975a2400bd0a Assembly-CSharp.dll:.Puzzle
 24bb26e7da03092690ef38ebcd7ec1c0 Assembly-CSharp.dll:.CameraPerspectiva
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ControladorGeral
+105163a5c9997f022889914a9ed64dd2 Assembly-CSharp.dll:.ControladorGeral
 b51661cfac71cfe55f6d0dbe25353f4e Assembly-CSharp.dll:.CuboDePuzzle
 a723fbedae099b288a2c2e28fddfb6d7 Assembly-CSharp.dll:.Controls
 26215f135eeb48d8fa1189498c107f6c Vuforia.UnityExtensions.dll:Vuforia.AnchorBehaviour
@@ -301,5 +311,4 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 3d1b89310e77c34bc0c8d7132231345c Vuforia.UnityExtensions.dll:Vuforia.WireframeBehaviour
 05524b8f659e7bfe5756d1335fec24ba Vuforia.UnityExtensions.dll:Vuforia.WireframeTrackableEventHandler
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
-3886d15b6e5f658ac9dfce6ce97ae34e Assembly-CSharp.dll:.PlayerController
-d23107e91b06c8301dff975a2400bd0a Assembly-CSharp.dll:.Puzzle
+36b259ea066fe4bccef9ed5cb38323e6 Assembly-CSharp.dll:.PlayerController

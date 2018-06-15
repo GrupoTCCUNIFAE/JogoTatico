@@ -1,19 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControladorGeral : MonoBehaviour {
 
-	private float vida = 100f;
-	private float mana = 100f;
-	private float ataque = 10f;
-    private float defesa = 100f;
-    private float armadura = 100f;
+	public float vida = 100f;
+	public float mana = 100f;
+	public float ataque = 10f;
+	public float defesa = 100f;
+	public float armadura = 100f;
     private int[] resistencias = new int[15];
 
 	public float Vida{
 		get{ return vida; }
-		set{ vida = value;}
+		set{
+			if (value < 0) {
+				vida = 0;
+				SceneManager.LoadScene(4);
+			}
+			else
+				vida = value;
+		}
 	}
     public float Mana{
 		get{ return mana; }

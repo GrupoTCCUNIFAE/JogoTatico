@@ -10,13 +10,16 @@ public class CriaFeitico : MonoBehaviour {
 	private string speel;
 
 	public void LerAcoes(){
-		speel = "";
+		speel = "003(85)(0)(103)";
 		for(int i =0;i<speelPanel.transform.childCount; i++){
 			Transform trans = speelPanel.transform.GetChild(i);
-			if(trans.GetComponentInChildren< DragAndDropItem>()!= null)
-				speel += trans.GetComponentInChildren< DragAndDropItem>().action + ";";
+			if (trans.GetComponentInChildren< DragAndDropItem> () != null) {
+				speel += ";" + trans.GetComponentInChildren< DragAndDropItem> ().action;
+				GameObject des = trans.GetChild(0).gameObject;
+				Destroy (des);
+			}
+			
 		}
-		speel = speel.Substring (0, speel.Length-1);
 		PlayerPrefs.SetString ("FeiticoSlot0", speel);
 		canvas.SetActive (false);
 	}

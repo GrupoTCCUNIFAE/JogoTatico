@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class MudarCena : MonoBehaviour {
 
 	public void CarregarCena(int cena){
-		SceneManager.LoadScene(1);
+		SceneManager.LoadScene(cena);
+	}
+
+	public void Sair(){
+		Application.Quit ();
 	}
 }

@@ -37,6 +37,14 @@ public class Feitico{
 
 			if(acoes[acaoAtual].Finalizado)
 				acaoAtual++;
+			if (feitico.GetComponent<Verificador> ().ColisaoComObstaculo){
+				FinalizarFeitico ();
+			}
+			if (feitico.GetComponent<Verificador> ().ColisaoComInimigo){
+				GameObject.Destroy (feitico.GetComponent<Verificador> ().Inimigo);
+				FinalizarFeitico ();
+			}
+
 		}		
 	}
 

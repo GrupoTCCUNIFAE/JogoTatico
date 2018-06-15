@@ -1,14 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Puzzle.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Interactible.cs">
     <Files>
       <File FileName="Assets\Scripts\ControladorDeFeiticos.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Verificador.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Interface\CriaFeitico.cs" Line="13" Column="14" />
+      <File FileName="Assets\Scripts\Interface\CriaFeitico.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Testes\CameraPerspectiva.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Acoes\Mover.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CuboDePuzzle.cs" Line="24" Column="28" />
-      <File FileName="Assets\Scripts\Puzzle.cs" Line="13" Column="28" />
+      <File FileName="Assets\Scripts\CuboDePuzzle.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Puzzle.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Interactible.cs" Line="45" Column="1" />
+      <File FileName="Assets\Scripts\PlayerManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Testes\MostraVidaInimigo.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerMotor.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

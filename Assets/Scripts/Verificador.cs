@@ -17,6 +17,9 @@ public class Verificador : MonoBehaviour {
 	private bool inimigoEsquerda = false;
 	private bool obstaculoEsquerda = false;
 	private bool objetoEsquerda = false;
+	private bool colisaoComObstaculo = false;
+	private bool colisaoComInimigo = false;
+	private GameObject inimigo;
 	private Vector3 esquerda;
 
 	private RaycastHit objetoColisao;
@@ -25,6 +28,16 @@ public class Verificador : MonoBehaviour {
 		VerificarFrente ();
 		VerificarDireita ();
 		VerificarEsquerda ();
+	}
+
+	private void OnTriggerEnter(Collider col){
+		if (col.tag == "Obstacle") {
+			colisaoComObstaculo = true;
+		}
+		if (col.tag == "Mob") {
+			colisaoComInimigo = true;
+			inimigo = col.gameObject;
+		}
 	}
 
 	private void VerificarEsquerda(){
@@ -160,5 +173,19 @@ public class Verificador : MonoBehaviour {
 	public bool ObstaculoDireita{
 		get{return obstaculoDireita;}
 		set{obstaculoDireita = value;}
+	}
+
+	public bool ColisaoComObstaculo{
+		get{return colisaoComObstaculo;}
+		set{colisaoComObstaculo = value;}
+	}
+
+	public bool ColisaoComInimigo{
+		get{return colisaoComInimigo;}
+		set{colisaoComInimigo = value;}
+	}
+
+	public GameObject Inimigo{
+		get{return inimigo;}
 	}
 }
