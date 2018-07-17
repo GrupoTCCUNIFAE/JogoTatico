@@ -69,11 +69,16 @@
      <Compile Include="Assets\Scripts\CuboDePuzzle.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enumerators\EnumAcoes.cs" />
+     <Compile Include="Assets\Scripts\EnumTipoItem.cs" />
      <Compile Include="Assets\Scripts\Feitico.cs" />
      <Compile Include="Assets\Scripts\HorarioNormal.cs" />
      <Compile Include="Assets\Scripts\Interactible.cs" />
      <Compile Include="Assets\Scripts\Interface\CriaFeitico.cs" />
      <Compile Include="Assets\Scripts\Interface\MudarCena.cs" />
+     <Compile Include="Assets\Scripts\Inventario.cs" />
+     <Compile Include="Assets\Scripts\InventarioUI.cs" />
+     <Compile Include="Assets\Scripts\Item.cs" />
+     <Compile Include="Assets\Scripts\Itens.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\PlayerMotor.cs" />
@@ -153,6 +158,9 @@
  </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Android.Extensions">
+ <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
