@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Inventario : MonoBehaviour {
 
-	private List<Item> Itens;
+	private List<int> itens = new List<int>();
 	private Item armadura;
 	private Item arma;
 
+	public List<int> Itens{
+		get{return itens;}
+	}
 }
