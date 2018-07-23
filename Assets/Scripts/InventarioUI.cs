@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class InventarioUI : MonoBehaviour {
 
 	public GameObject itemSlot;
-	public Inventario player;
 
+	private Inventario player;
 	private ScrollRect scrollRect;
 
 	void Start () {
+		player = PlayerManager.instance.GetComponent<Inventario>();
 		Itens.CarregarItens ();
 		scrollRect = GetComponent<ScrollRect> ();
 		AtualizarInventario ();
@@ -20,7 +21,7 @@ public class InventarioUI : MonoBehaviour {
 		
 	}
 
-	private void AtualizarInventario(){
+	public void AtualizarInventario(){
 		for (int cnt = 0; cnt < scrollRect.content.transform.childCount; cnt++) {
 			Destroy(scrollRect.content.transform.GetChild (cnt));
 		}

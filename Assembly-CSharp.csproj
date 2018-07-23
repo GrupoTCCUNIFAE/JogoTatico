@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\Inventario.cs" />
      <Compile Include="Assets\Scripts\InventarioUI.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />
+     <Compile Include="Assets\Scripts\ItemInterativel.cs" />
      <Compile Include="Assets\Scripts\Itens.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerManager.cs" />

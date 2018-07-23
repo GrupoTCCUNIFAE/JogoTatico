@@ -11,4 +11,9 @@ public class Inventario : MonoBehaviour {
 	public List<int> Itens{
 		get{return itens;}
 	}
+
+	public bool AdicionarItem(int id){
+		itens.Add (id);
+		return true;
+	}
 }

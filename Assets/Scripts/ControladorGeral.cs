@@ -9,7 +9,7 @@ public class ControladorGeral : MonoBehaviour {
 	public float mana = 100f;
 	public float ataque = 10f;
 	public float defesa = 100f;
-	public float armadura = 100f;
+	public float armadura = 0f;
     private int[] resistencias = new int[15];
 
 	public float Vida{
