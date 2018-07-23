@@ -25,6 +25,7 @@ public class ControladorGeral : MonoBehaviour {
 	}
     public float Mana{
 		get{ return mana; }
+		set{mana = value; }
 	}
     public float Defesa{
         get { return defesa; }
