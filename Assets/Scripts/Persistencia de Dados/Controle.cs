@@ -5,42 +5,16 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary; // bibilioteca para salvar em arquivo binario
 using System.IO;
 
-
-
-[Serializable]
-class PlayerData{
-
-
-	//ainda tem que deixar private e criar getters e setters
-
-
-	public float vida;
-	public float mana;
-	public List<int> itens;
-
-}
-
-
-
 public class Controle : MonoBehaviour {
-
-	public static Controle controle;
-	public  ControladorGeral jogador;
-
+	
+	private  ControladorGeral jogador;
 	private string caminhoArquivo;
+	private PlayerData playerData;
 
-	void Awake () {
-
-		if (controle == null) {
-			controle = this;
-		} else {
-			Destroy (gameObject);
-		}
-		DontDestroyOnLoad (gameObject);
-
+	public void Start () {
+		jogador = PlayerManager.instance.GetComponent<ControladorGeral>();
 		caminhoArquivo = Application.persistentDataPath + "/informacoes.dat";
-		Debug.Log (Application.persistentDataPath + "/informacoes.dat");
-
+		Carregar ();
 	}
 
 	public void Salvar(){
@@ -52,6 +26,7 @@ public class Controle : MonoBehaviour {
 
 		data.vida =jogador.Vida;
 		data.mana =jogador.Mana;
+		data.itens = PlayerManager.instance.GetComponent<Inventario> ().Itens;
 
 		bf.Serialize (file, data);
 
@@ -64,12 +39,18 @@ public class Controle : MonoBehaviour {
 			BinaryFormatter bf = new BinaryFormatter ();
 			FileStream file = File.Open (caminhoArquivo, FileMode.Open);
 
-			PlayerData data = (PlayerData)bf.Deserialize (file);
+			playerData = (PlayerData)bf.Deserialize (file);
 			file.Close ();
-			jogador.Vida = data.vida;
-			jogador.Mana = data.mana;
+			jogador.Vida = playerData.vida;
+			jogador.Mana = playerData.mana;
 		}
 	}
 
+	public PlayerData Data{
+		get{return playerData;}
+	}
 
+	void OnApplicationQuit(){
+		Salvar();
+	}
 }

@@ -12,7 +12,7 @@ public class UIControle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		controle = Controle.controle;
+		//controle = Controle.controle;
 	}
 
 	public void Salvar(){

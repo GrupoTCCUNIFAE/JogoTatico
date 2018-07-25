@@ -30,6 +30,10 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 			AbrirCriador ();
 		}
 
+		if (Input.GetKeyDown (KeyCode.A)) {
+			GetComponent<Inventario> ().Armadura = 1;
+		}
+
 		if (Input.GetKeyDown (KeyCode.I)) {
 			AbrirInventario ();
 		}

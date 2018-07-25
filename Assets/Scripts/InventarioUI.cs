@@ -19,12 +19,12 @@ public class InventarioUI : MonoBehaviour {
 	}
 	
 	void Update () {
-		
+		//AtualizarInventario ();
 	}
 
 	public void AtualizarInventario(){
 		for (int cnt = 0; cnt < scrollRect.content.transform.childCount; cnt++) {
-			Destroy(scrollRect.content.transform.GetChild (cnt));
+			Destroy(scrollRect.content.transform.GetChild (cnt).gameObject);
 		}
 
 		foreach(int idDoItem in player.Itens){
@@ -35,8 +35,9 @@ public class InventarioUI : MonoBehaviour {
 			Text texto = novoItem.transform.GetChild (1).GetComponent<Text> ();
 			RectTransform rect = novoItem.GetComponent<RectTransform> ();
 
-			imagem.sprite = item.imagem;
-			texto.text = item.nome;
+			novoItem.GetComponent<ItemUI> ().id = idDoItem;
+			imagem.sprite = item.Imagem;
+			texto.text = item.Nome;
 
 			novoItem.transform.SetParent (scrollRect.content);
 		} 

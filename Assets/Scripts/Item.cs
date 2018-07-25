@@ -5,19 +5,19 @@ using UnityEngine;
 [System.Serializable]
 public class Item{
 
-	//Tornar todos private
-	public string nome;
-	public string descricao;
-	public EnumTipoItem tipo;
-	public float valor;
-	public float peso;
-	public float defesa;
-	public float ataque;
-	public float cura;
-	public Sprite imagem;
-	public GameObject modelo;
+	private string nome;
+	private string descricao;
+	private EnumTipoItem tipo;
+	private float valor;
+	private float peso;
+	private float defesa;
+	private float ataque;
+	private float cura;
+	private Sprite imagem;
+	private GameObject modelo;
+	private int id;
 
-	public Item(string nome, string descricao, EnumTipoItem tipo, float valor, float peso, float defesa, float ataque, Sprite imagem, GameObject modelo, float cura){
+	public Item(string nome, string descricao, EnumTipoItem tipo, float valor, float peso, float defesa, float ataque, Sprite imagem, GameObject modelo, float cura, int id){
 		this.nome = nome;
 		this.descricao = descricao;
 		this.tipo = tipo;
@@ -28,6 +28,7 @@ public class Item{
 		this.imagem = imagem;
 		this.modelo = modelo;
 		this.cura = cura;
+		this.id = id;
 	}
 	public string Nome{
 		get{return nome;}
@@ -68,5 +69,9 @@ public class Item{
 	public float Cura{
 		get{return cura;}
 		set{cura = value;}
+	}
+	public int Id{
+		get{return id;}
+		set{id = value;}
 	}
 }
