@@ -23,10 +23,13 @@ public class Controle : MonoBehaviour {
 
 
 		PlayerData data = new PlayerData ();
+		Inventario inv = PlayerManager.instance.GetComponent<Inventario> ();
 
-		data.vida =jogador.Vida;
-		data.mana =jogador.Mana;
-		data.itens = PlayerManager.instance.GetComponent<Inventario> ().Itens;
+		data.vida = jogador.Vida;
+		data.mana = jogador.Mana;
+		data.arma = inv.Arma;
+		data.armadura = inv.Armadura;
+		data.itens = inv.Itens;
 
 		bf.Serialize (file, data);
 
@@ -41,8 +44,6 @@ public class Controle : MonoBehaviour {
 
 			playerData = (PlayerData)bf.Deserialize (file);
 			file.Close ();
-			jogador.Vida = playerData.vida;
-			jogador.Mana = playerData.mana;
 		}
 	}
 

@@ -8,6 +8,11 @@ public class PlayerStatus : ControladorGeral {
 
 	void Start () {
 		inventario = PlayerManager.instance.GetComponent<Inventario> ();
+		Controle controle = GetComponent<Controle> ();
+
+		vida = controle.Data.vida;
+		mana = controle.Data.mana;
+
 		AtualizarStatus ();
 	}
 	void Update () {

@@ -11,18 +11,21 @@ public class PlayerController : MonoBehaviour {
 	public LayerMask movementMask;		// The ground
 	public Camera cam;
 
+	private GameObject inventario;
+
 	PlayerMotor motor;		// Reference to our motor
 
 	// Get references
 	void Start (){
 		motor = GetComponent<PlayerMotor>();
+		inventario = GetComponent<InterfaceManager> ().inventarioUI.gameObject;
 	}
 
 	// Update is called once per frame
 	void Update (){
 
 		// If we press left mouse
-		if (Input.GetMouseButton(0) && !criadorDeFeiticos.activeSelf){
+		if (Input.GetMouseButton(0) && !criadorDeFeiticos.activeSelf && !inventario.activeInHierarchy){
 			// Shoot out a ray
 			Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;

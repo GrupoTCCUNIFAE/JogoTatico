@@ -15,5 +15,6 @@ public class ItemUI : MonoBehaviour {
 			PlayerManager.instance.GetComponent<Inventario> ().Arma = id;
 			break;
 		}
+		PlayerManager.instance.GetComponent<InterfaceManager> ().inventarioUI.AtualizarInventario ();
 	}
 }

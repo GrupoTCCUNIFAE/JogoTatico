@@ -7,22 +7,30 @@ using System;
 public class InventarioUI : MonoBehaviour {
 
 	public GameObject itemSlot;
+	public Image armadura;
+	public Image arma;
 
 	private Inventario player;
 	private ScrollRect scrollRect;
 
 	void Start () {
-		player = PlayerManager.instance.GetComponent<Inventario>();
 		Itens.CarregarItens ();
+		player = PlayerManager.instance.GetComponent<Inventario>();
 		scrollRect = GetComponent<ScrollRect> ();
 		AtualizarInventario ();
 	}
 	
-	void Update () {
-		//AtualizarInventario ();
-	}
-
 	public void AtualizarInventario(){
+		if (player.Arma != -1) {
+			arma.sprite = Itens.item [player.Arma].Imagem;
+			arma.color = Color.white;
+		}
+
+		if (player.Armadura != -1) {
+			armadura.sprite = Itens.item [player.Armadura].Imagem;
+			armadura.color = Color.white;
+		}
+
 		for (int cnt = 0; cnt < scrollRect.content.transform.childCount; cnt++) {
 			Destroy(scrollRect.content.transform.GetChild (cnt).gameObject);
 		}

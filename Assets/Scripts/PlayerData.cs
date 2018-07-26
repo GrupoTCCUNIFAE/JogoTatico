@@ -9,6 +9,7 @@ using System.IO;
 public class PlayerData{
 	public float vida;
 	public float mana;
+	public int arma;
+	public int armadura;
 	public List<int> itens;
-
 }

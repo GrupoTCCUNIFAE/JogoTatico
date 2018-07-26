@@ -75,6 +75,7 @@
      <Compile Include="Assets\Scripts\Interactible.cs" />
      <Compile Include="Assets\Scripts\Interface\CriaFeitico.cs" />
      <Compile Include="Assets\Scripts\Interface\MudarCena.cs" />
+     <Compile Include="Assets\Scripts\InterfaceManager.cs" />
      <Compile Include="Assets\Scripts\Inventario.cs" />
      <Compile Include="Assets\Scripts\InventarioUI.cs" />
      <Compile Include="Assets\Scripts\Item.cs" />

@@ -11,8 +11,11 @@ public class Inventario : MonoBehaviour {
 
 	void Start(){
 		Controle controle = PlayerManager.instance.GetComponent<Controle> ();
-		if (controle.Data != null)
+		if (controle.Data != null) {
 			itens = controle.Data.itens;
+			arma = controle.Data.arma;
+			armadura = controle.Data.armadura;
+		}
 		else 
 			itens = new List<int>();
 	}
