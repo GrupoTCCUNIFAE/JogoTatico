@@ -12,8 +12,12 @@ public class InventarioUI : MonoBehaviour {
 
 	private Inventario player;
 	private ScrollRect scrollRect;
+	private Sprite armaDesequipada;
+	private Sprite armaduraDesequipada;
 
 	void Start () {
+		armaDesequipada = arma.sprite;
+		armaduraDesequipada = armadura.sprite;
 		Itens.CarregarItens ();
 		player = PlayerManager.instance.GetComponent<Inventario>();
 		scrollRect = GetComponent<ScrollRect> ();
@@ -24,11 +28,17 @@ public class InventarioUI : MonoBehaviour {
 		if (player.Arma != -1) {
 			arma.sprite = Itens.item [player.Arma].Imagem;
 			arma.color = Color.white;
+		} else {
+			arma.sprite = armaDesequipada;
+			arma.color = new Color32 (173, 162, 90, 65);
 		}
 
 		if (player.Armadura != -1) {
 			armadura.sprite = Itens.item [player.Armadura].Imagem;
 			armadura.color = Color.white;
+		} else {
+			armadura.sprite = armaduraDesequipada;
+			armadura.color = new Color32 (173, 162, 90, 65);
 		}
 
 		for (int cnt = 0; cnt < scrollRect.content.transform.childCount; cnt++) {

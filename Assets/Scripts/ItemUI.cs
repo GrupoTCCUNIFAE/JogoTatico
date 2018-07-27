@@ -17,4 +17,18 @@ public class ItemUI : MonoBehaviour {
 		}
 		PlayerManager.instance.GetComponent<InterfaceManager> ().inventarioUI.AtualizarInventario ();
 	}
+
+	public void Desequipar(bool arma){
+		if (arma) {
+			PlayerManager.instance.GetComponent<Inventario> ().Arma = -1;
+		} else {
+			PlayerManager.instance.GetComponent<Inventario> ().Armadura = -1;
+		}
+		PlayerManager.instance.GetComponent<InterfaceManager> ().inventarioUI.AtualizarInventario ();
+	}
+
+	public void RemoverItem(){
+		PlayerManager.instance.GetComponent<Inventario> ().Itens.Remove (id);
+		PlayerManager.instance.GetComponent<InterfaceManager> ().inventarioUI.AtualizarInventario ();
+	}
 }
