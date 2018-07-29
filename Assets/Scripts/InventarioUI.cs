@@ -22,8 +22,17 @@ public class InventarioUI : MonoBehaviour {
 		player = PlayerManager.instance.GetComponent<Inventario>();
 		scrollRect = GetComponent<ScrollRect> ();
 		AtualizarInventario ();
+		transform.parent.parent.gameObject.SetActive (false);
 	}
-	
+
+	void Update(){
+		RotacionarPlayer ();
+	}
+
+	private void RotacionarPlayer(){
+		PlayerManager.instance.transform.Rotate (new Vector3 (0,1,0));
+	}
+
 	public void AtualizarInventario(){
 		if (player.Arma != -1) {
 			arma.sprite = Itens.item [player.Arma].Imagem;

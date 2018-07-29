@@ -37,7 +37,7 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.I)) {
 			AbrirInventario ();
 		}
-		if(criadorDeMagias.activeSelf){
+		if(criadorDeMagias.activeSelf || inventario.activeSelf){
 			interfaceDoJogador.SetActive(false);
 			Time.timeScale = 0;
 		}else{
@@ -64,11 +64,17 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 	}
 
 	public void AbrirInventario(){
+		Camera cam = PlayerManager.instance.GetComponent<InterfaceManager> ().camera;
+
 		if (inventario.activeSelf) {
 			inventario.SetActive (false);
+			GetComponent<RotacaoJogador> ().enabled = true;
+			cam.fieldOfView = 60;
 		} else {
 			inventario.SetActive (true);
 			criadorDeMagias.SetActive (false);
+			GetComponent<RotacaoJogador> ().enabled = false;
+			cam.fieldOfView = 15;
 		}
 	}
 }
