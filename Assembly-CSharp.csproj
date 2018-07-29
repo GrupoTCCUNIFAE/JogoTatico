@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\Enumerators\EnumAcoes.cs" />
      <Compile Include="Assets\Scripts\EnumTipoItem.cs" />
      <Compile Include="Assets\Scripts\Feitico.cs" />
+     <Compile Include="Assets\Scripts\FogoFatuo.cs" />
      <Compile Include="Assets\Scripts\HorarioNormal.cs" />
      <Compile Include="Assets\Scripts\Interactible.cs" />
      <Compile Include="Assets\Scripts\Interface\CriaFeitico.cs" />
