@@ -29,7 +29,7 @@ public class Controle : MonoBehaviour {
 		data.mana = jogador.Mana;
 		data.arma = inv.Arma;
 		data.armadura = inv.Armadura;
-		data.itens = inv.Itens;
+		data.itens = inv.Bolsa;
 
 		bf.Serialize (file, data);
 

@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class Inventario : MonoBehaviour {
 
+	public MeshFilter armaduraMesh;
+	public MeshFilter armaMesh;
+
 	private List<int> itens;
 	private int armadura = -1;
 	private int arma = -1;
 	private Controle controle;
+	private Mesh playerSemArmadura;
 
 	void Start(){
+		playerSemArmadura = Resources.Load<Mesh> ("ItemModels/player_sem_armadura");
 		Controle controle = PlayerManager.instance.GetComponent<Controle> ();
 		if (controle.Data != null) {
 			itens = controle.Data.itens;
@@ -20,7 +25,23 @@ public class Inventario : MonoBehaviour {
 			itens = new List<int>();
 	}
 
-	public List<int> Itens{
+	void Update(){
+		AtualizarVizual ();
+	}
+
+	private void AtualizarVizual(){
+		if (armadura != -1)
+			armaduraMesh.mesh = Itens.item [armadura].Modelo;
+		else
+			armaduraMesh.mesh = playerSemArmadura;
+
+		if (arma != -1)
+			armaMesh.mesh = Itens.item [arma].Modelo;
+		else
+			armaMesh.mesh = null;
+	}
+
+	public List<int> Bolsa{
 		get{return itens;}
 	}
 

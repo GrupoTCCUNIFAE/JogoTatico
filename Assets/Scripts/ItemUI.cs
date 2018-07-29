@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemUI : MonoBehaviour {
 	public int id;
+	public GameObject itemInterativo;
 
 	public void Interagir(){
 		EnumTipoItem tipo = Itens.item [id].Tipo;
@@ -28,7 +29,11 @@ public class ItemUI : MonoBehaviour {
 	}
 
 	public void RemoverItem(){
-		PlayerManager.instance.GetComponent<Inventario> ().Itens.Remove (id);
+		itemInterativo.GetComponent<ItemInterativel> ().IDDoItem = id;
+
+		PlayerManager.instance.GetComponent<Inventario> ().Bolsa.Remove (id);
 		PlayerManager.instance.GetComponent<InterfaceManager> ().inventarioUI.AtualizarInventario ();
+		Vector3 posicao = new Vector3 (PlayerManager.instance.transform.position.x+2, PlayerManager.instance.transform.position.y, PlayerManager.instance.transform.position.z);
+		Instantiate (itemInterativo, posicao, Quaternion.identity);
 	}
 }

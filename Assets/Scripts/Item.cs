@@ -14,10 +14,10 @@ public class Item{
 	private float ataque;
 	private float cura;
 	private Sprite imagem;
-	private GameObject modelo;
+	private Mesh modelo;
 	private int id;
 
-	public Item(string nome, string descricao, EnumTipoItem tipo, float valor, float peso, float defesa, float ataque, Sprite imagem, GameObject modelo, float cura, int id){
+	public Item(string nome, string descricao, EnumTipoItem tipo, float valor, float peso, float defesa, float ataque, Sprite imagem, Mesh modelo, float cura, int id){
 		this.nome = nome;
 		this.descricao = descricao;
 		this.tipo = tipo;
@@ -62,7 +62,7 @@ public class Item{
 		get{return imagem;}
 		set{imagem = value;}
 	}
-	public GameObject Modelo{
+	public Mesh Modelo{
 		get{return modelo;}
 		set{modelo = value;}
 	}

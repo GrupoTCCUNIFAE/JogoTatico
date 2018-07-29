@@ -45,7 +45,7 @@ public class InventarioUI : MonoBehaviour {
 			Destroy(scrollRect.content.transform.GetChild (cnt).gameObject);
 		}
 
-		foreach(int idDoItem in player.Itens){
+		foreach(int idDoItem in player.Bolsa){
 			Item item = Itens.item [idDoItem];
 			GameObject novoItem = Instantiate (itemSlot, Vector3.zero, Quaternion.identity);
 			novoItem.name = "Item do Inventario";
