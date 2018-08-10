@@ -44,6 +44,8 @@ public class Controle : MonoBehaviour {
 
 			playerData = (PlayerData)bf.Deserialize (file);
 			file.Close ();
+		} else {
+			playerData = new PlayerData ();
 		}
 	}
 

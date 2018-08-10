@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class ItemUI : MonoBehaviour {
+public class ItemUI : MonoBehaviour, IPointerEnterHandler,  IPointerExitHandler{
 	public int id;
 	public GameObject itemInterativo;
+	public GameObject info;
 
 	public void Interagir(){
 		EnumTipoItem tipo = Itens.item [id].Tipo;
@@ -35,5 +38,29 @@ public class ItemUI : MonoBehaviour {
 		PlayerManager.instance.GetComponent<InterfaceManager> ().inventarioUI.AtualizarInventario ();
 		Vector3 posicao = new Vector3 (PlayerManager.instance.transform.position.x+2, PlayerManager.instance.transform.position.y, PlayerManager.instance.transform.position.z);
 		Instantiate (itemInterativo, posicao, Quaternion.identity);
+	}
+
+	public void OnPointerEnter(PointerEventData eventData)
+	{
+		if (info != null) {
+			Text infoText = info.GetComponentInChildren<Text> ();
+			string texto = "Valor: "+Itens.item[id].Valor;
+
+			if(Itens.item[id].Ataque != 0){
+				texto += "\nAtaque: " + Itens.item [id].Ataque;
+			}
+			if(Itens.item[id].Defesa != 0){
+				texto += "\nDefesa: " + Itens.item [id].Defesa;
+			}
+
+			infoText.text = texto;
+			info.SetActive (true);
+
+		}
+	}
+	public void OnPointerExit(PointerEventData eventData)
+	{
+		if(info != null)
+			info.SetActive (false);
 	}
 }

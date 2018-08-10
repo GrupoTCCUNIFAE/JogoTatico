@@ -15,7 +15,7 @@ public static class Itens{
 		item [5] = new Item ("Armadura de Mago de Batalha", "", EnumTipoItem.Armadura, 10, 10, 20, 0, Resources.Load<Sprite>("ItemIcons/Armadura"), Resources.Load<Mesh>("ItemModels/armadura_de_mago_de_batalha"), 0, 5);
 		item [6] = new Item ("Manto de Mago do Deserto", "", EnumTipoItem.Armadura, 10, 1, 15, 0, Resources.Load<Sprite>("ItemIcons/Armadura"), Resources.Load<Mesh>("ItemModels/manto_de_mago_do_deserto"), 0, 6);
 		item [7] = new Item ("Cajado da Areia", "", EnumTipoItem.Arma, 10, 1, 0, 10, Resources.Load<Sprite>("ItemIcons/cajado_da_areia"), Resources.Load<Mesh>("ItemModels/cajado_da_areia"), 0, 7);
-		item [8] = new Item ("Trapos de Maego Eremita", "", EnumTipoItem.Armadura, 0, 1, 10, 0, Resources.Load<Sprite>("ItemIcons/Armadura"), Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 0, 8);
+		item [8] = new Item ("Trapos de Mago Eremita", "", EnumTipoItem.Armadura, 0, 1, 10, 0, Resources.Load<Sprite>("ItemIcons/Armadura"), Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 0, 8);
 	}
 
 }
