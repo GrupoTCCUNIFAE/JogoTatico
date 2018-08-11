@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\ControladorGeral.cs" />
      <Compile Include="Assets\Scripts\ControladorPlayerGUI.cs" />
      <Compile Include="Assets\Scripts\Controls.cs" />
+     <Compile Include="Assets\Scripts\CriadorDeBlocosProgramaveis.cs" />
      <Compile Include="Assets\Scripts\CuboDePuzzle.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enumerators\EnumAcoes.cs" />
@@ -98,6 +99,7 @@
      <Compile Include="Assets\Scripts\Testes\MostraVidaInimigo.cs" />
      <Compile Include="Assets\Scripts\Testes\ObjetoDestrutivelDeTeste.cs" />
      <Compile Include="Assets\Scripts\Verificador.cs" />
+     <Compile Include="Assets\Scripts\VisualizadorDeFeitico.cs" />
      <Compile Include="Assets\SimpleDragAndDrop\Scripts\DragAndDropCell.cs" />
      <Compile Include="Assets\SimpleDragAndDrop\Scripts\DragAndDropItem.cs" />
      <Compile Include="Assets\SimpleDragAndDrop\Scripts\DummyControlUnit.cs" />
