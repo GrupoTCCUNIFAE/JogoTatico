@@ -18,7 +18,6 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 	private Feitico feitico;
 
 	void Start () {
-		feitico = controladorDeFeiticos.feiticos [0];
 		ataque = GetComponent<AtaqueFisico> ();
 	}
 
@@ -48,7 +47,7 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.A))
 			ataque.Atacar ();
 
-		if (Input.GetKeyDown (KeyCode.Space) && !feitico.Rodar) {
+		if (Input.GetKeyDown (KeyCode.Space)) {
 					controladorDeFeiticos.Carregar (0);
 					controladorDeFeiticos.Lancar (0);
 		}

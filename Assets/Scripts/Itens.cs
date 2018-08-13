@@ -5,6 +5,7 @@ using UnityEngine;
 public static class Itens{
 
 	public static Item[] item = new Item[9];
+	public static Magia[] magia = new Magia[1];
 
 	public static void CarregarItens(){
 		item [0] = new Item ("Cajado de Madeira", "", EnumTipoItem.Arma, 10, 1, 0, 3, Resources.Load<Sprite>("ItemIcons/cajado_de_madeira"), Resources.Load<Mesh>("ItemModels/cajado_de_madeira"), 0, 0);
@@ -16,6 +17,9 @@ public static class Itens{
 		item [6] = new Item ("Manto de Mago do Deserto", "", EnumTipoItem.Armadura, 10, 1, 15, 0, Resources.Load<Sprite>("ItemIcons/Armadura"), Resources.Load<Mesh>("ItemModels/manto_de_mago_do_deserto"), 0, 6);
 		item [7] = new Item ("Cajado da Areia", "", EnumTipoItem.Arma, 10, 1, 0, 10, Resources.Load<Sprite>("ItemIcons/cajado_da_areia"), Resources.Load<Mesh>("ItemModels/cajado_da_areia"), 0, 7);
 		item [8] = new Item ("Trapos de Mago Eremita", "", EnumTipoItem.Armadura, 0, 1, 10, 0, Resources.Load<Sprite>("ItemIcons/Armadura"), Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 0, 8);
+	}
+	public static void CarregarMagias(){
+		magia [0] = new Magia ("Fogo", Resources.Load<GameObject> ("Magias/Fogo"), null, 10, 1);
 	}
 
 }

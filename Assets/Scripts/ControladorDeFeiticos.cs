@@ -5,8 +5,13 @@ using System.Text.RegularExpressions;
 
 public class ControladorDeFeiticos : MonoBehaviour {
 
-	public Feitico[] feiticos = new Feitico[0];
+	private Feitico[] feiticos;
 	public float dis;
+
+	void Start(){
+		feiticos = new Feitico[10];
+		Itens.CarregarMagias ();
+	}
 
 	void Update()
 	{
@@ -32,11 +37,13 @@ public class ControladorDeFeiticos : MonoBehaviour {
 		}
 		linhaParaSalvar = linhaParaSalvar.Remove(linhaParaSalvar.Length - 1);
 		PlayerPrefs.SetString ("FeiticoSlot"+slot, linhaParaSalvar);
-		print (linhaParaSalvar);
 	}
 
 	public void Carregar(int slot){
+		feiticos [slot] = new Feitico ();
 		feiticos [slot].Acoes = new List<Acao> ();
+		feiticos [slot].donoDoFeitico = gameObject;
+		feiticos [slot].prefabFeitico = Itens.magia[0].Prefab;
 
 		string algoritmoDaMagia = PlayerPrefs.GetString ("FeiticoSlot" + slot);
 

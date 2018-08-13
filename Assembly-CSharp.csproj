@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\CameraPorArea.cs" />
      <Compile Include="Assets\Scripts\CameraRotativa.cs" />
      <Compile Include="Assets\Scripts\CharacterCombat.cs" />
+     <Compile Include="Assets\Scripts\ControladorDeAcoes.cs" />
      <Compile Include="Assets\Scripts\ControladorDeFeiticos.cs" />
      <Compile Include="Assets\Scripts\ControladorGeral.cs" />
      <Compile Include="Assets\Scripts\ControladorPlayerGUI.cs" />
@@ -84,6 +85,7 @@
      <Compile Include="Assets\Scripts\ItemInterativel.cs" />
      <Compile Include="Assets\Scripts\ItemUI.cs" />
      <Compile Include="Assets\Scripts\Itens.cs" />
+     <Compile Include="Assets\Scripts\Magia.cs" />
      <Compile Include="Assets\Scripts\Persistencia de Dados\Controle.cs" />
      <Compile Include="Assets\Scripts\Persistencia de Dados\UIControle.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />

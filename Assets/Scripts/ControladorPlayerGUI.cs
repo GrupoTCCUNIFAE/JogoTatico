@@ -8,8 +8,13 @@ public class ControladorPlayerGUI : MonoBehaviour {
 	public ControladorGeral statusDoPlayer;
 	public RectTransform barraDeVida;
 
+	private float total;
+
+	void Start(){
+		total = barraDeVida.anchorMax.y - barraDeVida.anchorMin.y;
+	}
+
 	void Update () {
-		//Total = 0.28
-		barraDeVida.anchorMax = new Vector2 ((((statusDoPlayer.Vida)/100)*0.28f)+barraDeVida.anchorMin.x, barraDeVida.anchorMax.y);
+		barraDeVida.anchorMax = new Vector2 (barraDeVida.anchorMax.x, (((statusDoPlayer.Vida)/100)*total)+barraDeVida.anchorMin.y);
 	}
 }
