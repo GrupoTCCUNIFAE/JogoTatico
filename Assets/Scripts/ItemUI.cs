@@ -44,7 +44,7 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler,  IPointerExitHandler{
 	{
 		if (info != null) {
 			Text infoText = info.GetComponentInChildren<Text> ();
-			string texto = "Valor: "+Itens.item[id].Valor;
+			string texto = Itens.item[id].Nome+"\n";
 
 			if(Itens.item[id].Ataque != 0){
 				texto += "\nAtaque: " + Itens.item [id].Ataque;

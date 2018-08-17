@@ -8,9 +8,7 @@ public class InventarioUI : MonoBehaviour {
 
 	public GameObject itemSlot;
 	public Image armadura;
-	public Text nomeArma;
 	public Image arma;
-	public Text nomeArmadura;
 
 	private Inventario player;
 	private ScrollRect scrollRect;
@@ -38,22 +36,18 @@ public class InventarioUI : MonoBehaviour {
 	public void AtualizarInventario(){
 		if (player.Arma != -1) {
 			arma.sprite = Itens.item [player.Arma].Imagem;
-			nomeArma.text = Itens.item [player.Arma].Nome;
 			arma.color = Color.white;
 		} else {
 			arma.sprite = armaDesequipada;
-			nomeArma.text = "Arma";
-			arma.color = new Color32 (173, 162, 90, 65);
+			arma.color = new Color32 (0, 0, 0, 65);
 		}
 
 		if (player.Armadura != -1) {
 			armadura.sprite = Itens.item [player.Armadura].Imagem;
-			nomeArmadura.text = Itens.item [player.Armadura].Nome;
 			armadura.color = Color.white;
 		} else {
 			armadura.sprite = armaduraDesequipada;
-			nomeArmadura.text = "Armadura";
-			armadura.color = new Color32 (173, 162, 90, 65);
+			armadura.color = new Color32 (0, 0, 0, 65);
 		}
 
 		for (int cnt = 0; cnt < scrollRect.content.transform.childCount; cnt++) {
@@ -61,6 +55,7 @@ public class InventarioUI : MonoBehaviour {
 		}
 
 		foreach(int idDoItem in player.Bolsa){
+			print (idDoItem);
 			Item item = Itens.item [idDoItem];
 			GameObject novoItem = Instantiate (itemSlot, Vector3.zero, Quaternion.identity);
 			novoItem.name = "Item do Inventario";

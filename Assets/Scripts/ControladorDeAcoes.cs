@@ -65,6 +65,20 @@ public class ControladorDeAcoes : MonoBehaviour {
 			DesativarInterfaces ();
 			editor.GetComponentsInChildren<CriaFeitico> () [0].Slot = slot;
 			editor.gameObject.SetActive (true);
+			Transform spellPanel = GetInterface ("Editor").GetComponentsInChildren<CriaFeitico>()[0].spellPanel.transform;
+
+			spellPanel.GetChild (0).GetComponent<CriadorDeBlocosProgramaveis> ().enabled = true;
+
+			for (int cnt = 0; cnt < spellPanel.childCount; cnt++) {
+				if (cnt == 0) {
+					if (spellPanel.GetChild (cnt).childCount > 0) {						
+						Destroy (spellPanel.GetChild (cnt).GetChild (0).gameObject);
+					} 
+				}else {
+					Destroy (spellPanel.GetChild (cnt).gameObject);
+				}
+			}
+
 			Time.timeScale = 0;
 		}
 	}

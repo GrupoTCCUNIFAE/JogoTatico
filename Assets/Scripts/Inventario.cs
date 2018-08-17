@@ -52,11 +52,33 @@ public class Inventario : MonoBehaviour {
 
 	public int Armadura{
 		get{return armadura;}
-		set{armadura = value;}
+		set{
+			if (value != -1) {
+				if (armadura != -1) {
+					itens.Add (armadura);
+				}
+				itens.Remove (value);
+			} else {
+				itens.Add (armadura);
+			}
+
+			armadura = value;
+		}
 	}
 
 	public int Arma{
 		get{return arma;}
-		set{arma = value;}
+		set{
+			if (value != -1) {
+				if (arma != -1) {
+					itens.Add (arma);
+				}
+				itens.Remove (value);
+			} else {
+				itens.Add (arma);
+			}
+
+			arma = value;
+		}
 	}
 }
