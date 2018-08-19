@@ -48,7 +48,7 @@ public class ControladorDeAcoesTeste : MonoBehaviour {
 			ataque.Atacar ();
 
 		if (Input.GetKeyDown (KeyCode.Space)) {
-					controladorDeFeiticos.Carregar (0);
+					//controladorDeFeiticos.Carregar (0);
 					controladorDeFeiticos.Lancar (0);
 		}
 	}

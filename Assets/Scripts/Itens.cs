@@ -19,7 +19,7 @@ public static class Itens{
 		item [8] = new Item ("Trapos de Mago Eremita", "", EnumTipoItem.Armadura, 0, 1, 10, 0, Resources.Load<Sprite>("ItemIcons/Armadura"), Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 0, 8);
 	}
 	public static void CarregarMagias(){
-		magia [0] = new Magia ("Fogo", Resources.Load<GameObject> ("Magias/Fogo"), null, 10, 1);
+		magia [0] = new Magia ("Fogo", Resources.Load<GameObject> ("Magias/Fogo"),  Resources.Load<Sprite>("MagiaIcons/Fogo"), 10, 1);
 	}
 
 }

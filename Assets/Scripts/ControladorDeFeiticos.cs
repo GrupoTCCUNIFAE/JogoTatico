@@ -39,11 +39,11 @@ public class ControladorDeFeiticos : MonoBehaviour {
 		PlayerPrefs.SetString ("FeiticoSlot"+slot, linhaParaSalvar);
 	}
 
-	public void Carregar(int slot){
+	public void Carregar(int slot, int elemento){
 		feiticos [slot] = new Feitico ();
 		feiticos [slot].Acoes = new List<Acao> ();
 		feiticos [slot].donoDoFeitico = gameObject;
-		feiticos [slot].prefabFeitico = Itens.magia[0].Prefab;
+		feiticos [slot].prefabFeitico = Itens.magia[elemento].Prefab;
 
 		string algoritmoDaMagia = PlayerPrefs.GetString ("FeiticoSlot" + slot);
 

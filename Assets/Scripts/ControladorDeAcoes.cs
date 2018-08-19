@@ -8,9 +8,12 @@ public class ControladorDeAcoes : MonoBehaviour {
 	public Camera cam;
 
 	private ControladorDeFeiticos controladorDeFeiticos;
+	private Inventario inventario;
 
 	void Start () {
 		controladorDeFeiticos = GetComponent<ControladorDeFeiticos> ();
+		inventario = GetComponent<Inventario> ();
+		DesativarInterfaces ();
 	}
 
 	void Update () {
@@ -35,6 +38,17 @@ public class ControladorDeAcoes : MonoBehaviour {
 		if (!InterfaceAtiva ()) {
 			GetInterface ("PlayerGUI").gameObject.SetActive (true);
 			Time.timeScale = 1;
+		}
+		if (Input.GetButtonDown ("MagiasPreparadas")) {			
+			if (GetInterface ("Magias").activeSelf) {
+				DesativarInterfaces ();
+				Time.timeScale = 1;
+			}
+			else {
+				DesativarInterfaces ();
+				GetInterface ("Magias").gameObject.SetActive (true);
+				Time.timeScale = 0;
+			}
 		}
 	}
 
@@ -84,8 +98,10 @@ public class ControladorDeAcoes : MonoBehaviour {
 	}
 
 	private void LancarMagia(int slot){
-		controladorDeFeiticos.Carregar (slot);
-		controladorDeFeiticos.Lancar (slot);
+		if (inventario.MagiasPreparadas [slot] != -1) {
+			controladorDeFeiticos.Carregar (slot, inventario.MagiasPreparadas [slot]);
+			controladorDeFeiticos.Lancar (slot);
+		}
 	}
 
 	private bool InterfaceAtiva(){

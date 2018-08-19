@@ -12,4 +12,6 @@ public class PlayerData{
 	public int arma;
 	public int armadura;
 	public List<int> itens;
+	public List<int> magias;
+	public int[] magiasPreparadas;
 }

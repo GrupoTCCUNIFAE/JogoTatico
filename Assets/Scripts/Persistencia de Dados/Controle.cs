@@ -30,6 +30,8 @@ public class Controle : MonoBehaviour {
 		data.arma = inv.Arma;
 		data.armadura = inv.Armadura;
 		data.itens = inv.Bolsa;
+		data.magias = inv.Magias;
+		data.magiasPreparadas = inv.MagiasPreparadas;
 
 		bf.Serialize (file, data);
 
