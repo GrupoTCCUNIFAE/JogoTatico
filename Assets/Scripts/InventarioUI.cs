@@ -7,6 +7,7 @@ using System;
 public class InventarioUI : MonoBehaviour {
 
 	public GameObject itemSlot;
+	public GameObject info;
 	public Image armadura;
 	public Image arma;
 
@@ -55,7 +56,6 @@ public class InventarioUI : MonoBehaviour {
 		}
 
 		foreach(int idDoItem in player.Bolsa){
-			print (idDoItem);
 			Item item = Itens.item [idDoItem];
 			GameObject novoItem = Instantiate (itemSlot, Vector3.zero, Quaternion.identity);
 			novoItem.name = "Item do Inventario";
@@ -64,6 +64,7 @@ public class InventarioUI : MonoBehaviour {
 			RectTransform rect = novoItem.GetComponent<RectTransform> ();
 
 			novoItem.GetComponent<ItemUI> ().id = idDoItem;
+			novoItem.GetComponent<ItemUI> ().info = info;
 			imagem.sprite = item.Imagem;
 			texto.text = item.Nome;
 

@@ -90,6 +90,7 @@
      <Compile Include="Assets\Scripts\MagiaItemUI.cs" />
      <Compile Include="Assets\Scripts\MagiaSlotUI.cs" />
      <Compile Include="Assets\Scripts\MagiasUI.cs" />
+     <Compile Include="Assets\Scripts\MagiaUI.cs" />
      <Compile Include="Assets\Scripts\Persistencia de Dados\Controle.cs" />
      <Compile Include="Assets\Scripts\Persistencia de Dados\UIControle.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />

@@ -23,26 +23,25 @@ public class Feitico{
 
 		if(rodarAcoes)
 		{			
-			if (!instanciado) 
-			{
+			if (!instanciado) {
 				instanciado = true;
 				Vector3 posicaoFeitico = new Vector3 (donoDoFeitico.transform.position.x, donoDoFeitico.transform.position.y, donoDoFeitico.transform.position.z);
 				feitico = GameObject.Instantiate (prefabFeitico, posicaoFeitico, donoDoFeitico.transform.rotation);
-				foreach (Acao acao in acoes) 
-				{
+				foreach (Acao acao in acoes) {
 					acao.DonoDaAcao = feitico;
 				}
-			}
-			acoes[acaoAtual].Update();
+			} else {
+				acoes [acaoAtual].Update ();
 
-			if(acoes[acaoAtual].Finalizado)
-				acaoAtual++;
-			if (feitico.GetComponent<Verificador> ().ColisaoComObstaculo){
-				FinalizarFeitico ();
-			}
-			if (feitico.GetComponent<Verificador> ().ColisaoComInimigo){
-				GameObject.Destroy (feitico.GetComponent<Verificador> ().Inimigo);
-				FinalizarFeitico ();
+				if (acoes [acaoAtual].Finalizado)
+					acaoAtual++;
+				if (feitico.GetComponent<Verificador> ().ColisaoComObstaculo) {
+					FinalizarFeitico ();
+				}
+				if (feitico.GetComponent<Verificador> ().ColisaoComInimigo) {
+					GameObject.Destroy (feitico.GetComponent<Verificador> ().Inimigo);
+					FinalizarFeitico ();
+				}
 			}
 
 		}		

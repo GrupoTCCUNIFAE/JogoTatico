@@ -6,6 +6,16 @@ public class ItemInterativel : MonoBehaviour {
 
 	public int IDDoItem;
 
+	private GameObject nomeGameObj;
+	private TextMesh nomeTxtMesh;
+
+	void Start(){
+		nomeGameObj = transform.GetChild (0).gameObject;
+		nomeTxtMesh = nomeGameObj.GetComponent<TextMesh> ();
+
+		nomeTxtMesh.text = Itens.item [IDDoItem].Nome;
+	}
+
 	void OnTriggerEnter (Collider col) {
 		InventarioUI inventarioUi = PlayerManager.instance.GetComponent<InterfaceManager> ().inventarioUI;
 

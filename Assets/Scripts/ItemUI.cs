@@ -36,7 +36,7 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler,  IPointerExitHandler{
 
 		PlayerManager.instance.GetComponent<Inventario> ().Bolsa.Remove (id);
 		PlayerManager.instance.GetComponent<InterfaceManager> ().inventarioUI.AtualizarInventario ();
-		Vector3 posicao = new Vector3 (PlayerManager.instance.transform.position.x+2, PlayerManager.instance.transform.position.y, PlayerManager.instance.transform.position.z);
+		Vector3 posicao = new Vector3 (PlayerManager.instance.transform.position.x+4, PlayerManager.instance.transform.position.y, PlayerManager.instance.transform.position.z);
 		Instantiate (itemInterativo, posicao, Quaternion.identity);
 	}
 
@@ -53,6 +53,7 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler,  IPointerExitHandler{
 				texto += "\nDefesa: " + Itens.item [id].Defesa;
 			}
 
+			texto += "\nValor: " + Itens.item [id].Valor;
 			infoText.text = texto;
 			info.SetActive (true);
 

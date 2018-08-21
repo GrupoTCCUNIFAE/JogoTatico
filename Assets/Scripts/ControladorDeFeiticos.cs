@@ -40,14 +40,16 @@ public class ControladorDeFeiticos : MonoBehaviour {
 	}
 
 	public void Carregar(int slot, int elemento){
-		feiticos [slot] = new Feitico ();
-		feiticos [slot].Acoes = new List<Acao> ();
-		feiticos [slot].donoDoFeitico = gameObject;
-		feiticos [slot].prefabFeitico = Itens.magia[elemento].Prefab;
+		if (feiticos [slot] == null || !feiticos [slot].Rodar) {
+			feiticos [slot] = new Feitico ();
+			feiticos [slot].Acoes = new List<Acao> ();
+			feiticos [slot].donoDoFeitico = gameObject;
+			feiticos [slot].prefabFeitico = Itens.magia [elemento].Prefab;
 
-		string algoritmoDaMagia = PlayerPrefs.GetString ("FeiticoSlot" + slot);
+			string algoritmoDaMagia = PlayerPrefs.GetString ("FeiticoSlot" + slot);
 
-		CriarFeitico (slot, algoritmoDaMagia);
+			CriarFeitico (slot, algoritmoDaMagia);
+		}
 	}
 
 	private Acao CriarAcao(string acao){
