@@ -7,12 +7,12 @@ using System.IO;
 
 public class Controle : MonoBehaviour {
 	
-	private  ControladorGeral jogador;
+	private  PlayerStatus jogador;
 	private string caminhoArquivo;
 	private PlayerData playerData;
 
 	public void Start () {
-		jogador = PlayerManager.instance.GetComponent<ControladorGeral>();
+		jogador = PlayerManager.instance.GetComponent<PlayerStatus>();
 		caminhoArquivo = Application.persistentDataPath + "/informacoes.dat";
 		Carregar ();
 	}
@@ -32,6 +32,12 @@ public class Controle : MonoBehaviour {
 		data.itens = inv.Bolsa;
 		data.magias = inv.Magias;
 		data.magiasPreparadas = inv.MagiasPreparadas;
+
+		data.xpAtual = jogador.xp.XpAtual;
+		data.xpNivel = jogador.xp.XpNivel;
+		data.xpNivelAnt = jogador.xp.XpNivelAnt;
+		data.level = jogador.xp.Level;
+
 
 		bf.Serialize (file, data);
 

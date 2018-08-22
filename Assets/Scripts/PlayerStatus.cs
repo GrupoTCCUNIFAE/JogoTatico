@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStatus : ControladorGeral {
+public class PlayerStatus : ControladorGeral{
 
 	public int velocidadeDaMagia;
-
+	public  ControladorXp xp;
 	private Inventario inventario;
 
 	void Start () {
