@@ -18,6 +18,7 @@ public class ControladorXp : MonoBehaviour{
 		aux = xpNivel;
 		xpNivel = (xpNivel + xpNivelAnt) -  percentual *(xpNivel + xpNivelAnt);
 		XpNivelAnt = aux;
+		aumentarStatus ();
 
 	}
 
@@ -34,6 +35,15 @@ public class ControladorXp : MonoBehaviour{
 			}
 
 		}
+	}
+
+
+	public void aumentarStatus(){
+		PlayerStatus jogador  = PlayerManager.instance.GetComponent<PlayerStatus>();
+
+		jogador.Vida = jogador.Vida + 10;
+		jogador.Mana = jogador.Mana + 8;
+
 	}
 
 	public ControladorXp(float xpNivel){
