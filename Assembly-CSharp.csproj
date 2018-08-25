@@ -51,6 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Mapa\Map\Scripts\ControleDePosicao.cs" />
+     <Compile Include="Assets\Mapa\Map\Scripts\MapaMundiScript.cs" />
+     <Compile Include="Assets\Mapa\Map\Scripts\MiniMapScript.cs" />
+     <Compile Include="Assets\Mapa\Map\Scripts\Posicao.cs" />
      <Compile Include="Assets\Scripts\Acao.cs" />
      <Compile Include="Assets\Scripts\Acoes\Condicional.cs" />
      <Compile Include="Assets\Scripts\Acoes\Mover.cs" />
