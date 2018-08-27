@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MonstronomiconUI : MonoBehaviour {
-
+	/*
 	public GameObject cardSlot;
 	public GameObject info;
 
@@ -38,5 +38,5 @@ public class MonstronomiconUI : MonoBehaviour {
 
 			novoCard.transform.SetParent (scrollRect.content);
 		} 
-	}
+	}*/
 }

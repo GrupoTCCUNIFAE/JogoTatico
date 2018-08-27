@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControladorXp : MonoBehaviour{
+public class ControladorXp{
 
 
 	private float xpNivel = 40;
@@ -46,8 +46,8 @@ public class ControladorXp : MonoBehaviour{
 
 	}
 
-	public ControladorXp(float xpNivel){
-		this.xpNivel = xpNivel;
+	public ControladorXp(float xpAtual){
+		this.xpAtual = xpAtual;
 	}
 
 	public float XpNivel{
