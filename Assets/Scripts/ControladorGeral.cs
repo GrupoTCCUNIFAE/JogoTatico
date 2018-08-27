@@ -10,9 +10,12 @@ public class ControladorGeral : MonoBehaviour {
 	public float ataque = 2f;
 	public float defesa = 100f;
 	public float armadura = 0f;
-    private int[] resistencias = new int[15];
+    private EnumElementos[] resistencias = new EnumElementos[15];
+    private EnumElementos[] fraquezas = new EnumElementos[15];
+    private EnumElementos elemento;
+    private int x;
 
-	public float Vida{
+    public float Vida{
 		get{ return vida; }
 		set{
 			if (value < 0) {
@@ -33,10 +36,27 @@ public class ControladorGeral : MonoBehaviour {
     public float Armadura{
         get { return armadura; }
     }
-    public int[] Resistencia{
-        get { return resistencias;}
+    public EnumElementos[] Resistencia{
+        get { return resistencias; }
+    }
+    public EnumElementos[] Fraquezas{
+        get { return fraquezas; }
     }
 	public float Ataque{
 		get{return ataque;}
+        set{
+            if (elemento == fraquezas[x])
+            {
+                ataque = ataque * 2;
+            }
+            if (elemento == resistencias[x])
+            {
+                ataque = ataque / 2;
+            }
+        }
 	}
+    public EnumElementos Elemento{
+        get { return elemento; }
+    }
+
 }
