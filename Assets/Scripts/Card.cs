@@ -4,26 +4,29 @@ using UnityEngine;
 
 public class Card{
 
-	private Sprite imagem;
+
 	private string nome;
 	private string descricao;
-	private List<string> fraquesas;
-	private List<string> resistencias;
-	private List<string> imunidades;
+	private Sprite imagem;
+	private float ataque;
+	private float defesa;
+	private EnumElementos tipoDano;
+	private List<EnumElementos> resistencias;
+	private List<EnumElementos> fraquesas;
 
-	public Card(Sprite imagem, string nome, string descricao, List<string> fraquesas, List<string> resistencias, List<string> imunidades){
+	public Card(string nome, string descricao, Sprite imagem, float ataque, float defesa, EnumElementos tipoDano, List<EnumElementos> resistencias, List<EnumElementos> fraquesas){
+
+		this.nome = nome;
+		this.descricao = descricao;
 		this.imagem = imagem;
-		this. nome = nome;
-		this. descricao = descricao;
-		this. fraquesas = fraquesas;
-		this. resistencias = resistencias;
-		this. imunidades = imunidades;
+		this.ataque = ataque;
+		this.defesa = defesa;
+		this.tipoDano = tipoDano;
+		this.resistencias = resistencias;
+		this.fraquesas = fraquesas;
+
 	}
 
-	public Sprite Imagem{
-		get{return imagem;}
-		set{ imagem = value; }
-	}
 	public string Nome{
 		get{return nome;}
 		set{nome = value;}
@@ -32,16 +35,28 @@ public class Card{
 		get{return descricao;}
 		set{descricao = value;}
 	}
-	public List<string> Fraquesas{
-		get{return fraquesas;}
-		set{fraquesas = value;}
+	public Sprite Imagem{
+		get{return imagem;}
+		set{imagem = value;}
 	}
-	public List<string> Resistencias{
+	public float Ataque{
+		get{return ataque;}
+		set{ataque = value;}
+	}
+	public float Defesa{
+		get{return defesa;}
+		set{defesa = value;}
+	}
+	public EnumElementos TipoDano{
+		get{return tipoDano;}
+		set{tipoDano = value;}
+	}
+	public List<EnumElementos> Resistencias{
 		get{return resistencias;}
 		set{resistencias = value;}
 	}
-	public List<string> Imunidades{
-		get{return imunidades;}
-		set{imunidades = value;}
+	public List<EnumElementos> Fraquesas{
+		get{return fraquesas;}
+		set{fraquesas = value;}
 	}
 }
