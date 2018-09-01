@@ -23,8 +23,11 @@ public class ControladorDeFeiticos : MonoBehaviour {
 	}
 
 	public void Lancar(int feitico){
-		if (feiticos [feitico] != null) 
+		PlayerStatus status = PlayerManager.instance.GetComponent<PlayerStatus> ();
+
+		if (feiticos [feitico] != null && status.mana >= feiticos [feitico].Custo) 
 		{
+			status.Mana -= feiticos [feitico].Custo;
 			feiticos [feitico].Rodar = true;
 		}
 	}
@@ -49,6 +52,8 @@ public class ControladorDeFeiticos : MonoBehaviour {
 			string algoritmoDaMagia = PlayerPrefs.GetString ("FeiticoSlot" + slot);
 
 			CriarFeitico (slot, algoritmoDaMagia);
+
+			feiticos [slot].Custo = feiticos [slot].Acoes.Count * Itens.magia [elemento].MultiplicadorDeMana;
 		}
 	}
 

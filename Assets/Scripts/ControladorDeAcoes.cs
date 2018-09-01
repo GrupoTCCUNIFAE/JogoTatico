@@ -9,10 +9,12 @@ public class ControladorDeAcoes : MonoBehaviour {
 
 	private ControladorDeFeiticos controladorDeFeiticos;
 	private Inventario inventario;
+	private PlayerStatus status;
 
 	void Start () {
 		controladorDeFeiticos = GetComponent<ControladorDeFeiticos> ();
 		inventario = GetComponent<Inventario> ();
+		status = GetComponent<PlayerStatus> ();
 		DesativarInterfaces ();
 	}
 
@@ -46,7 +48,7 @@ public class ControladorDeAcoes : MonoBehaviour {
 			}
 		}
 		if (Input.GetButtonDown("Magia")) {
-			LancarMagia(int.Parse(Input.inputString));
+				LancarMagia(int.Parse(Input.inputString));
 		}
 		if (!InterfaceAtiva ()) {
 			GetInterface ("PlayerGUI").gameObject.SetActive (true);

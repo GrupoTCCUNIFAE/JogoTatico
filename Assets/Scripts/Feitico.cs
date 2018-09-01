@@ -15,6 +15,7 @@ public class Feitico{
 	private bool fim = true;
 	private bool instanciado = false;
 	private GameObject feitico;
+	private float custo;
 
 	public void Update()
 	{
@@ -98,5 +99,10 @@ public class Feitico{
 
 	public Acao AcaoAtual{
 		get{return acoes [acaoAtual];}
+	}
+
+	public float Custo{
+		get{ return custo; }
+		set{ custo = value; }
 	}
 }
