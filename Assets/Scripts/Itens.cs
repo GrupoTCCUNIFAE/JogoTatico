@@ -6,6 +6,7 @@ public static class Itens{
 
 	public static Item[] item = new Item[9];
 	public static Magia[] magia = new Magia[1];
+	public static Card[] card = new Card[3];
 
 	public static void CarregarItens(){
 		item [0] = new Item ("Cajado de Madeira", "", EnumTipoItem.Arma, 10, 1, 0, 3, Resources.Load<Sprite>("ItemIcons/cajado_de_madeira"), Resources.Load<Mesh>("ItemModels/cajado_de_madeira"), 0, 0);
@@ -22,4 +23,23 @@ public static class Itens{
 		magia [0] = new Magia ("Fogo", Resources.Load<GameObject> ("Magias/Fogo"),  Resources.Load<Sprite>("MagiaIcons/Fogo"), 10, 1);
 	}
 
+	public static void CarregarCards(){
+		List<EnumElementos> card0 = new List<EnumElementos> ();
+		card0.Add (EnumElementos.Fogo);
+		card0.Add (EnumElementos.Terra);
+
+		List<EnumElementos> card1 = new List<EnumElementos> ();
+		card1.Add (EnumElementos.Agua);
+		card1.Add (EnumElementos.Ar);
+
+		List<EnumElementos> card2 = new List<EnumElementos> ();
+		card2.Add (EnumElementos.Agua);
+		card2.Add (EnumElementos.Ar);
+		card2.Add (EnumElementos.Terra);
+		card2.Add (EnumElementos.Fogo);
+
+		card [0] = new Card ("Capiroto de Fogo", "Teste", Resources.Load<Sprite>("Testes/fire-elemental"), 10, 10, EnumElementos.Fogo, card0 , card1);
+		card [1] = new Card ("Bixão de Agua", "Teste", Resources.Load<Sprite>("Testes/turtle"), 10, 10, EnumElementos.Agua, card1, card0);
+		card [2] = new Card ("Slime", "Teste", Resources.Load<Sprite>("Testes/slime"), 1, 1, EnumElementos.Agua, new List<EnumElementos>(), card2);
+	}
 }

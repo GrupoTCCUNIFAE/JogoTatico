@@ -14,6 +14,7 @@ public class Controle : MonoBehaviour {
 	public void Start () {
 		jogador = PlayerManager.instance.GetComponent<PlayerStatus>();
 		caminhoArquivo = Application.persistentDataPath + "/informacoes.dat";
+		print (caminhoArquivo);
 		Carregar ();
 	}
 
@@ -32,6 +33,7 @@ public class Controle : MonoBehaviour {
 		data.itens = inv.Bolsa;
 		data.magias = inv.Magias;
 		data.magiasPreparadas = inv.MagiasPreparadas;
+		data.cards = inv.Cards;
 
 		data.xpAtual = jogador.xp.XpAtual;
 		data.xpNivel = jogador.xp.XpNivel;

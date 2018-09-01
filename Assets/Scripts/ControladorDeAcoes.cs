@@ -32,6 +32,19 @@ public class ControladorDeAcoes : MonoBehaviour {
 				Time.timeScale = 0;
 			}
 		}
+		if (Input.GetButtonDown ("Cards")) {
+			if (GetInterface ("Cards").activeSelf) {
+				DesativarInterfaces ();
+				GetInterface ("PlayerGUI").SetActive (true);
+				GetComponent<RotacaoJogador> ().enabled = true;
+				Time.timeScale = 1;
+			} else {
+				DesativarInterfaces ();
+				GetInterface ("Cards").SetActive (true);
+				GetComponent<RotacaoJogador> ().enabled = false;
+				Time.timeScale = 0;
+			}
+		}
 		if (Input.GetButtonDown("Magia")) {
 			LancarMagia(int.Parse(Input.inputString));
 		}

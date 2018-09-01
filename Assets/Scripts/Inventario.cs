@@ -9,6 +9,7 @@ public class Inventario : MonoBehaviour {
 
 	private List<int> itens;
 	private List<int> magias;
+	private List<int> cards;
 	private int[] magiasPreparadas = new int[10];
 	private int armadura = -1;
 	private int arma = -1;
@@ -28,15 +29,27 @@ public class Inventario : MonoBehaviour {
 			arma = controle.Data.arma;
 			armadura = controle.Data.armadura;
 			magias = controle.Data.magias;
+			cards = controle.Data.cards;
 			magiasPreparadas = controle.Data.magiasPreparadas;
+			magias.Add (0);
 		} else {
 			itens = new List<int> ();
 			magias = new List<int> ();
+			cards = new List<int> ();
 		}
 	}
 
 	void Update(){
 		AtualizarVizual ();
+	}
+
+	public bool AdicionarCard(int cardAdicionado){
+		foreach (int card in cards) {
+			if (card == cardAdicionado)
+				return false;
+		}
+		cards.Add (cardAdicionado);
+		return true;
 	}
 
 	private void AtualizarVizual(){
@@ -100,5 +113,9 @@ public class Inventario : MonoBehaviour {
 	public int[] MagiasPreparadas{
 		get{ return magiasPreparadas; }
 		set{ magiasPreparadas = value; }
+	}
+	public List<int> Cards{
+		get{ return cards; }
+		set{ cards = value; }
 	}
 }

@@ -13,6 +13,7 @@ public class PlayerData{
 	public int armadura;
 	public List<int> itens;
 	public List<int> magias;
+	public List<int> cards;
 	public int[] magiasPreparadas;
 	public float xpNivel;
 	public float xpNivelAnt;
