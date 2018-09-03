@@ -110,6 +110,8 @@
      <Compile Include="Assets\Scripts\Portal.cs" />
      <Compile Include="Assets\Scripts\Puzzle.cs" />
      <Compile Include="Assets\Scripts\RotacaoJogador.cs" />
+     <Compile Include="Assets\Scripts\SceneController.cs" />
+     <Compile Include="Assets\Scripts\Singleton.cs" />
      <Compile Include="Assets\Scripts\Testes\CameraPerspectiva.cs" />
      <Compile Include="Assets\Scripts\Testes\ControladorDeAcoesTeste.cs" />
      <Compile Include="Assets\Scripts\Testes\MostraVidaInimigo.cs" />
