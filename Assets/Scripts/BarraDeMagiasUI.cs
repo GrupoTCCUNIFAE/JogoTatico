@@ -15,11 +15,11 @@ public class BarraDeMagiasUI : MonoBehaviour {
 		AtualizarBarra ();
 	}
 	public void AtualizarBarra () {
-		for (int cnt = 0; cnt < transform.childCount; cnt++) {
+		for (int cnt = 0; cnt < transform.GetChild(0).childCount; cnt++) {
 			if (inventario.MagiasPreparadas [cnt] != -1) {
-				transform.GetChild (cnt).GetComponentsInChildren<Image> () [1].sprite = Itens.magia [inventario.MagiasPreparadas [cnt]].Imagem;
+				transform.GetChild(0).GetChild (cnt).GetComponentsInChildren<Image> () [1].sprite = Itens.magia [inventario.MagiasPreparadas [cnt]].Imagem;
 			} else {
-				transform.GetChild (cnt).GetComponentsInChildren<Image> () [1].color = Color.clear;
+				transform.GetChild(0).GetChild (cnt).GetComponentsInChildren<Image> () [1].color = Color.clear;
 			}
 		}
 	}

@@ -16,10 +16,10 @@ public class SceneController : Singleton<SceneController>{
 			Itens.CarregarCards ();
 			Itens.CarregarItens ();
 			Itens.CarregarMagias ();
-			comecarCarregamento = true;
+			comecarCarregamento = false;
 			carregando = false;
-			nomeProximaCena = "CenaPadrao";
-			tempoMinimoLoad = 1;
+			nomeProximaCena = "";
+			tempoMinimoLoad = 3;
 		}
 	}
 

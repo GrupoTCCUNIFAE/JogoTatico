@@ -1,46 +1,29 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Inventario.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Shaders\CelShader.shader">
     <Files>
-      <File FileName="Assets\Scripts\Inventario.cs" Line="38" Column="29" />
-      <File FileName="Assets\Scripts\Itens.cs" Line="40" Column="3" />
+      <File FileName="Assets\Scripts\Inventario.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Itens.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\InventarioUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ItemUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MagiasUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MagiaSlotUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\ControladorDeAcoes.cs" Line="50" Column="38" />
-      <File FileName="Assets\Scripts\ControladorDeFeiticos.cs" Line="28" Column="76" />
+      <File FileName="Assets\Scripts\ControladorDeAcoes.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ControladorDeFeiticos.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\BarraDeMagiasUI.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\MagiaItemUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Persistencia de Dados\Controle.cs" Line="36" Column="26" />
-      <File FileName="Assets\Scripts\PlayerData.cs" Line="16" Column="25" />
-      <File FileName="Assets\Scripts\ItemInterativel.cs" Line="21" Column="32" />
+      <File FileName="Assets\Scripts\Persistencia de Dados\Controle.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerData.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ItemInterativel.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PlayerStatus.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Card.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\CardUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Feitico.cs" Line="106" Column="24" />
-      <File FileName="Assets\Scripts\ControladorPlayerGUI.cs" Line="16" Column="3" />
+      <File FileName="Assets\Scripts\Feitico.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ControladorPlayerGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SceneController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Shaders\CelShader.shader" Line="1" Column="27" />
+      <File FileName="Assets\Shaders\ShaderTeste.shader" Line="207" Column="4" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="New Unity Project" expanded="True">
-            <Node name="Assembly-CSharp" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="Interface" expanded="True" />
-                <Node name="Persistencia de Dados" expanded="True" />
-                <Node name="Inventario.cs" selected="True" />
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State name="__root__">
-          <Node name="New Unity Project" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

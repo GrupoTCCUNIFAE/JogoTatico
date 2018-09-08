@@ -121,6 +121,7 @@
      <Compile Include="Assets\SimpleDragAndDrop\Scripts\DragAndDropCell.cs" />
      <Compile Include="Assets\SimpleDragAndDrop\Scripts\DragAndDropItem.cs" />
      <Compile Include="Assets\SimpleDragAndDrop\Scripts\DummyControlUnit.cs" />
+     <None Include="Assets\Shaders\CelShader2.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
