@@ -5,68 +5,27 @@ using UnityEngine;
 public class ControladorXp{
 
 
-	private float xpNivel = 40;
-	private float xpNivelAnt = 40;
 	private float xpAtual = 0;
-	private int level = 1;
-	private float percentual= 0.20f;
+	private int levelAtual = 1;
 
-	public void Evoluir(){
-		float aux = 0;
-
-		level = level + 1;
-		aux = xpNivel;
-		xpNivel = (xpNivel + xpNivelAnt) -  percentual *(xpNivel + xpNivelAnt);
-		XpNivelAnt = aux;
-		aumentarStatus ();
-
+	public ControladorXp(float xpAtual, int levelAtual){
+		this.xpAtual = xpAtual;
+		this.levelAtual = levelAtual;
 	}
 
 	public float XpAtual{
 		get{ return xpAtual; }
 		set{
-			float aux = xpAtual + value;
-			if (xpNivel <= aux) {
-				aux = aux - xpAtual; 
-				xpAtual = value;
-				Evoluir();
-			} else {
-				xpAtual = value;
+			if (xpAtual > levelAtual * 1000) {
+				levelAtual++;
+				xpAtual = 0;
 			}
-
+			xpAtual = value;
 		}
 	}
 
-
-	public void aumentarStatus(){
-		PlayerStatus jogador  = PlayerManager.instance.GetComponent<PlayerStatus>();
-
-		jogador.Vida = jogador.Vida + 10;
-		jogador.Mana = jogador.Mana + 8;
-
-	}
-
-	public ControladorXp(float xpAtual){
-		this.xpAtual = xpAtual;
-	}
-
-	public float XpNivel{
-		get{ return xpNivel; }
-		set{xpNivel = value; }
-	}
-
-	public float XpNivelAnt{
-		get{ return xpNivelAnt; }
-		set{xpNivelAnt = value; }
-	}
-
-
 	public int Level{
-		get{ return level; }
-		set{level = value; }
+		get{ return levelAtual; }
+		set{levelAtual++; }
 	}
-
-
-
-
 }

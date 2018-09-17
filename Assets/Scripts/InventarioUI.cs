@@ -59,8 +59,8 @@ public class InventarioUI : MonoBehaviour {
 			Item item = Itens.item [idDoItem];
 			GameObject novoItem = Instantiate (itemSlot, Vector3.zero, Quaternion.identity);
 			novoItem.name = "Item do Inventario";
-			Image imagem = novoItem.transform.GetChild(0).GetComponent<Image> ();
-			Text texto = novoItem.transform.GetChild (1).GetComponent<Text> ();
+			Image imagem = novoItem.transform.GetComponent<Image> ();
+			Text texto = novoItem.transform.GetChild (0).GetComponent<Text> ();
 			RectTransform rect = novoItem.GetComponent<RectTransform> ();
 
 			novoItem.GetComponent<ItemUI> ().id = idDoItem;

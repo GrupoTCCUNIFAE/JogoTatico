@@ -36,10 +36,7 @@ public class Controle : MonoBehaviour {
 		data.cards = inv.Cards;
 
 		data.xpAtual = jogador.xp.XpAtual;
-		data.xpNivel = jogador.xp.XpNivel;
-		data.xpNivelAnt = jogador.xp.XpNivelAnt;
 		data.level = jogador.xp.Level;
-
 
 		bf.Serialize (file, data);
 

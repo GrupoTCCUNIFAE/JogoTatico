@@ -14,9 +14,9 @@ public class PlayerStatus : ControladorGeral{
 		if (controle.Data != null) {
 			vida = controle.Data.vida;
 			mana = controle.Data.mana;
-			xp = new ControladorXp (controle.Data.xpAtual);
+			xp = new ControladorXp (controle.Data.xpAtual, controle.Data.level);
 		} else {
-			xp = new ControladorXp (0);
+			xp = new ControladorXp (0, 1);
 			vida = 100;
 			mana = 100;
 		}

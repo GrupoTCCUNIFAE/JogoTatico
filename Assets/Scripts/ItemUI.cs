@@ -19,6 +19,8 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler,  IPointerExitHandler{
 			PlayerManager.instance.GetComponent<Inventario> ().Arma = id;
 			break;
 		}
+		if(info != null)
+			info.SetActive (false);
 		PlayerManager.instance.GetComponent<InterfaceManager> ().inventarioUI.AtualizarInventario ();
 	}
 

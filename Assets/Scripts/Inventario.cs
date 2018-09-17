@@ -31,7 +31,6 @@ public class Inventario : MonoBehaviour {
 			magias = controle.Data.magias;
 			cards = controle.Data.cards;
 			magiasPreparadas = controle.Data.magiasPreparadas;
-			magias.Add (0);
 		} else {
 			itens = new List<int> ();
 			magias = new List<int> ();

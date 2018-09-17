@@ -15,8 +15,6 @@ public class PlayerData{
 	public List<int> magias;
 	public List<int> cards;
 	public int[] magiasPreparadas;
-	public float xpNivel;
-	public float xpNivelAnt;
 	public float xpAtual;
 	public int level;
 }
