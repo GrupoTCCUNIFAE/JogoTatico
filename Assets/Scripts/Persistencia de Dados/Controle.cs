@@ -28,6 +28,9 @@ public class Controle : MonoBehaviour {
 
 		data.vida = jogador.Vida;
 		data.mana = jogador.Mana;
+		data.vidaMaxima = jogador.VidaMaxima;
+		data.manaMaxima = jogador.ManaMaxima;
+		data.velocidade = jogador.Velocidade;
 		data.arma = inv.Arma;
 		data.armadura = inv.Armadura;
 		data.itens = inv.Bolsa;

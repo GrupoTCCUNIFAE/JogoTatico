@@ -15,7 +15,7 @@ public class Mover : Acao {
 		this.direcao = direcao;
 		this.distancia = distancia;
 		Nome = nome;
-		velocidadeJogador = PlayerManager.instance.GetComponent<PlayerStatus> ().velocidadeDaMagia;
+		velocidadeJogador = PlayerManager.instance.GetComponent<PlayerStatus> ().Velocidade;
 	}
 
 	public override void Update()

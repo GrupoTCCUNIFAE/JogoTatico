@@ -19,17 +19,20 @@ public class ControladorDeAcoes : MonoBehaviour {
 	}
 
 	void Update () {
+
 		if (Input.GetButtonDown ("Inventario")) {
 			if (GetInterface ("Inventario").activeSelf) {
 				DesativarInterfaces ();
 				GetInterface ("PlayerGUI").SetActive (true);
 				GetComponent<RotacaoJogador> ().enabled = true;
+				Camera.allCameras [0].cullingMask = -1;
 				cam.fieldOfView = 60;
 				Time.timeScale = 1;
 			} else {
 				DesativarInterfaces ();
 				GetInterface ("Inventario").SetActive (true);
 				GetComponent<RotacaoJogador> ().enabled = false;
+				Camera.allCameras [0].cullingMask = (1 << LayerMask.NameToLayer("Player")| 1 << LayerMask.NameToLayer("UI"));
 				cam.fieldOfView = 15;
 				Time.timeScale = 0;
 			}
@@ -53,17 +56,6 @@ public class ControladorDeAcoes : MonoBehaviour {
 		if (!InterfaceAtiva ()) {
 			GetInterface ("PlayerGUI").gameObject.SetActive (true);
 			Time.timeScale = 1;
-		}
-		if (Input.GetButtonDown ("MagiasPreparadas")) {			
-			if (GetInterface ("Magias").activeSelf) {
-				DesativarInterfaces ();
-				Time.timeScale = 1;
-			}
-			else {
-				DesativarInterfaces ();
-				GetInterface ("Magias").gameObject.SetActive (true);
-				Time.timeScale = 0;
-			}
 		}
 	}
 
@@ -95,7 +87,6 @@ public class ControladorDeAcoes : MonoBehaviour {
 			editor.GetComponentsInChildren<CriaFeitico> () [0].Slot = slot;
 			editor.gameObject.SetActive (true);
 			Transform spellPanel = GetInterface ("Editor").GetComponentsInChildren<CriaFeitico>()[0].spellPanel.transform;
-
 			spellPanel.GetChild (0).GetComponent<CriadorDeBlocosProgramaveis> ().enabled = true;
 
 			for (int cnt = 0; cnt < spellPanel.childCount; cnt++) {

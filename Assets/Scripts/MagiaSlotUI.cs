@@ -13,8 +13,8 @@ public class MagiaSlotUI : MonoBehaviour {
 	}
 
 	void Update(){
-		if (transform.childCount > 0) {
-			print (transform.GetComponentsInChildren<MagiaItemUI>()[0].id);
+		if (transform.childCount > 2) {
+			print (slot);
 			inventario.MagiasPreparadas [slot] = transform.GetComponentsInChildren<MagiaItemUI>()[0].id;
 		}
 	}

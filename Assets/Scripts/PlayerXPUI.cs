@@ -15,12 +15,22 @@ public class PlayerXPUI : MonoBehaviour {
 	}
 
 	public void AumentarVida(){
-		playerStat.Vida += playerStat.xp.Level*10;
+		playerStat.VidaMaxima += playerStat.xp.Level*10;
 		levelUpUI.SetActive (false);
 	}
 
 	public void AumentarMana(){
-		playerStat.mana += playerStat.xp.Level*10;
+		playerStat.ManaMaxima += playerStat.xp.Level*10;
+		levelUpUI.SetActive (false);
+	}
+
+	public void NovoElemento(){
+		PlayerManager.instance.GetComponent<Inventario> ().Magias.Add (0);
+		levelUpUI.SetActive (false);
+	}
+
+	public void AumentarVelocidade(int value){
+		playerStat.Velocidade += value;
 		levelUpUI.SetActive (false);
 	}
 

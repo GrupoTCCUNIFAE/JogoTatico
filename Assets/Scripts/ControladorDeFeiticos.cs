@@ -25,7 +25,7 @@ public class ControladorDeFeiticos : MonoBehaviour {
 	public void Lancar(int feitico){
 		PlayerStatus status = PlayerManager.instance.GetComponent<PlayerStatus> ();
 
-		if (feiticos [feitico] != null && status.mana >= feiticos [feitico].Custo) 
+		if (feiticos [feitico] != null && status.mana >= feiticos [feitico].Custo && !feiticos [feitico].Rodar) 
 		{
 			status.Mana -= feiticos [feitico].Custo;
 			feiticos [feitico].Rodar = true;
@@ -64,7 +64,7 @@ public class ControladorDeFeiticos : MonoBehaviour {
 			argumentos = acao.Split (new char[]{'(',')'}); 
 			switch ((EnumAcoes)Mathf.Abs (acaoConvertida)) {
 				case EnumAcoes.Mover:		
-					return new Mover (int.Parse(argumentos[1]) * 10, dis, "Mover " + acao);
+				return new Mover (int.Parse(argumentos[1]), dis, "Mover " + acao);
 
 				case EnumAcoes.Virar:
 					return new Virar ((int)(90 * int.Parse(argumentos[1])), "Virar " + 90 * Mathf.Sign (acaoConvertida));

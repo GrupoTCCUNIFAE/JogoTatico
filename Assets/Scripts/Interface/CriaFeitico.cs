@@ -6,12 +6,17 @@ public class CriaFeitico : MonoBehaviour {
 
 	public GameObject spellPanel;
 	public GameObject canvas;
+	public MagiasUI magias;
 
 	private string spell;
 	private int slot;
 
 	public void LerAcoes(){
 		spell = "";
+		Inventario inv = PlayerManager.instance.GetComponent<Inventario> ();
+
+		inv.MagiasPreparadas [slot] = magias.Magia;
+
 		for(int i =0;i<spellPanel.transform.childCount; i++){
 			Transform trans = spellPanel.transform.GetChild(i);
 			if (trans.GetComponentInChildren< DragAndDropItem> () != null) {

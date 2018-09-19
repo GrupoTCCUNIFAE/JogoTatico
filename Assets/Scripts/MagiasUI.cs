@@ -5,37 +5,44 @@ using UnityEngine.UI;
 
 public class MagiasUI : MonoBehaviour {
 
-	public GameObject magiaSlot;
+	public Image imagemDaMagia;
+	public Text nomeDaMagia;
+	public Text danoDaMagia;
+	public Text multiplicadorDeMana;
 
-	private ScrollRect scrollRect;
-	private Inventario player;
+	private int magiaAtual = 0;
+	private Inventario inventario;
 
-	void Start () {
-		scrollRect = GetComponent<ScrollRect> ();
-		player = PlayerManager.instance.GetComponent<Inventario>();
-		AtualizarInventario ();
+	void Start(){
+		Itens.CarregarMagias ();
+		inventario = PlayerManager.instance.GetComponent<Inventario> ();
 	}
-	
 
-	public void AtualizarInventario(){
-		
-		for (int cnt = 0; cnt < scrollRect.content.transform.childCount; cnt++) {
-			Destroy(scrollRect.content.transform.GetChild (cnt).gameObject);
+	void Update(){
+		imagemDaMagia.sprite = Itens.magia [inventario.Magias[magiaAtual]].Imagem;
+		nomeDaMagia.text = Itens.magia [inventario.Magias[magiaAtual]].Nome;
+		danoDaMagia.text = "Dano: "+Itens.magia [inventario.Magias[magiaAtual]].Dano;
+		multiplicadorDeMana.text = "Multiplicador de Custo de mana: "+Itens.magia [inventario.Magias[magiaAtual]].MultiplicadorDeMana;
+	}
+
+	public void ProximaMagia(){
+		if (magiaAtual < inventario.Magias.Count-1) {
+			magiaAtual++;
+		} else {
+			magiaAtual = 0;
 		}
-
-		foreach(int idDaMagia in player.Magias){
-			Magia magia = Itens.magia [idDaMagia];
-			GameObject novaMagia = Instantiate (magiaSlot, Vector3.zero, Quaternion.identity);
-			novaMagia.name = "Magia";
-			Image imagem = novaMagia.transform.GetChild(0).GetComponent<Image> ();
-
-			novaMagia.GetComponentInChildren<MagiaItemUI> ().id = idDaMagia;
-			imagem.sprite = magia.Imagem;
-
-			imagem.enabled = true;
-			novaMagia.GetComponent<Image> ().enabled = true;
-
-			novaMagia.transform.SetParent (scrollRect.content);
-		} 
 	}
+
+	public void MagiaAnterior(){
+		if (magiaAtual > 0) {
+			magiaAtual--;
+		} else {
+			magiaAtual = inventario.Magias.Count-1;
+		}
+	}
+
+	public int Magia{
+		get{ return magiaAtual; }
+	}
+
 }

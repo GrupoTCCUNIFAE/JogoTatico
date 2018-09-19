@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerStatus : ControladorGeral{
 
-	public int velocidadeDaMagia;
+	private int velocidadeDaMagia = 5;
 	public  ControladorXp xp;
 	private Inventario inventario;
+	private float vidaMaxima;
+	private float manaMaxima;
 
 	void Start () {
 		inventario = PlayerManager.instance.GetComponent<Inventario> ();
@@ -14,11 +16,16 @@ public class PlayerStatus : ControladorGeral{
 		if (controle.Data != null) {
 			vida = controle.Data.vida;
 			mana = controle.Data.mana;
+			vidaMaxima = controle.Data.vidaMaxima;
+			manaMaxima = controle.Data.manaMaxima;
+			velocidadeDaMagia = controle.Data.velocidade;
 			xp = new ControladorXp (controle.Data.xpAtual, controle.Data.level);
 		} else {
 			xp = new ControladorXp (0, 1);
 			vida = 100;
 			mana = 100;
+			vidaMaxima = 100;
+			manaMaxima = 100;
 		}
 		AtualizarStatus ();
 	}
@@ -33,5 +40,46 @@ public class PlayerStatus : ControladorGeral{
 		if (inventario.Arma != -1) {
 			ataque = Itens.item [inventario.Arma].Ataque;
 		}
+	}
+
+	public float Vida {
+		set{ 
+			if (value <= vidaMaxima)
+				vida = value;
+			else
+				vida = vidaMaxima;
+		}
+		get{return vida;}
+	}
+
+	public float Mana {
+		set{ 
+			if (value <= manaMaxima)
+				mana = value;
+			else
+				mana = manaMaxima;
+		}
+		get{return mana;}
+	}
+
+	public float VidaMaxima{
+		set{ 
+			vidaMaxima = value; 
+			vida = vidaMaxima;
+		}
+		get{ return vidaMaxima; }
+	}
+
+	public float ManaMaxima{
+		set{ 
+			manaMaxima = value; 
+			mana = manaMaxima;
+		}
+		get{ return manaMaxima; }
+	}
+
+	public int Velocidade{
+		set{ velocidadeDaMagia = value; }
+		get{ return velocidadeDaMagia; }
 	}
 }
