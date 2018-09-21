@@ -9,13 +9,17 @@ public class Magia{
 	private Sprite imagem;
 	private float dano;
 	private float multiplicadorDeMana;
+	private EnumNivel nivel;
+	private int id;
 
-	public Magia(string nome, GameObject prefab, Sprite imagem, float dano, float multiplicadorDeMana){
+	public Magia(string nome, GameObject prefab, Sprite imagem, float dano, float multiplicadorDeMana, EnumNivel nivel, int id){
 		this.nome = nome;
 		this.prefab = prefab;
 		this.imagem = imagem;
 		this.dano = dano;
 		this.multiplicadorDeMana = multiplicadorDeMana;
+		this.nivel = nivel;
+		this.id = id;
 	}
 	public string Nome{
 		get{return nome;}
@@ -37,4 +41,18 @@ public class Magia{
 		get{return multiplicadorDeMana;}
 		set{multiplicadorDeMana = value;}
 	}
+	public EnumNivel Nivel{
+		get{ return nivel; }
+	}
+	public int Id{
+		get{ return id; }
+	}
+}
+
+public enum EnumNivel{
+	Tolo,
+	Novato,
+	Adepto,
+	Mestre,
+	Arquimago
 }

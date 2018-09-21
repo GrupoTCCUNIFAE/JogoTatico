@@ -58,12 +58,14 @@ public class DragAndDropItem : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 			Image iconImage = icon.AddComponent<Image>();
 			iconImage.raycastTarget = false;
 			iconImage.sprite = myImage.sprite;
+			iconImage.preserveAspect = true;
 			RectTransform iconRect = icon.GetComponent<RectTransform>();
 			// Set icon's dimensions
 			RectTransform myRect = GetComponent<RectTransform>();
 			iconRect.pivot = new Vector2(0.5f, 0.5f);
 			iconRect.anchorMin = new Vector2(0.5f, 0.5f);
 			iconRect.anchorMax = new Vector2(0.5f, 0.5f);
+			iconRect.localScale = myRect.localScale;
 			iconRect.sizeDelta = new Vector2(myRect.rect.width, myRect.rect.height);
 
 			if (OnItemDragStartEvent != null)

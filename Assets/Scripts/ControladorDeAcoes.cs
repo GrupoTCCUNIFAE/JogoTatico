@@ -59,7 +59,7 @@ public class ControladorDeAcoes : MonoBehaviour {
 		}
 	}
 
-	private void DesativarInterfaces(){
+	public void DesativarInterfaces(){
 		int numeroDeInterfaces = interfaces.transform.childCount;
 		for (int cnt = 0; cnt < numeroDeInterfaces; cnt++) {
 			interfaces.transform.GetChild (cnt).gameObject.SetActive (false);

@@ -20,9 +20,9 @@ public static class Itens{
 		item [8] = new Item ("Trapos de Mago Eremita", "", EnumTipoItem.Armadura, 0, 1, 10, 0, Resources.Load<Sprite>("ItemIcons/Armadura"), Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 0, 8);
 	}
 	public static void CarregarMagias(){
-		magia [0] = new Magia ("Fogo", Resources.Load<GameObject> ("Magias/Fogo"),  Resources.Load<Sprite>("MagiaIcons/Fogo"), 10, 1);
-		magia [1] = new Magia ("Raio", Resources.Load<GameObject> ("Magias/Raio"),  Resources.Load<Sprite>("MagiaIcons/Raio"), 20, 2);
-		magia [2] = new Magia ("Natureza", Resources.Load<GameObject> ("Magias/Veneno"),  Resources.Load<Sprite>("MagiaIcons/Natureza"), 30, 3);
+		magia [0] = new Magia ("Fogo", Resources.Load<GameObject> ("Magias/Fogo"),  Resources.Load<Sprite>("MagiaIcons/Fogo"), 10, 1, EnumNivel.Tolo, 0);
+		magia [1] = new Magia ("Raio", Resources.Load<GameObject> ("Magias/Raio"),  Resources.Load<Sprite>("MagiaIcons/Raio"), 20, 2, EnumNivel.Novato, 1);
+		magia [2] = new Magia ("Natureza", Resources.Load<GameObject> ("Magias/Veneno"),  Resources.Load<Sprite>("MagiaIcons/Natureza"), 30, 3, EnumNivel.Novato, 2);
 	}
 
 	public static void CarregarCards(){
