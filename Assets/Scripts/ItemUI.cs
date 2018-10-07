@@ -18,6 +18,12 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler,  IPointerExitHandler{
 		case EnumTipoItem.Arma:
 			PlayerManager.instance.GetComponent<Inventario> ().Arma = id;
 			break;
+		case EnumTipoItem.Consumivel:
+			Consumir(id);
+
+			//PlayerManager.instance.GetComponent<PlayerStatus> ().Vida += Itens.item [id].Cura;
+			//PlayerManager.instance.GetComponent<Inventario> ().Bolsa.Remove (id);
+			break;
 		}
 		if(info != null)
 			info.SetActive (false);
@@ -65,5 +71,10 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler,  IPointerExitHandler{
 	{
 		if(info != null)
 			info.SetActive (false);
+	}
+
+	public void Consumir(int id){
+		//PlayerManager.instance.GetComponent<PlayerStatus> ().Vida += Itens.item [id].Cura;
+		//PlayerManager.instance.GetComponent<Inventario> ().Bolsa.Remove (id);
 	}
 }
