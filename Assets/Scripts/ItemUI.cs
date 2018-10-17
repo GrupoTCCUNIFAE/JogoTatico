@@ -21,8 +21,12 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler,  IPointerExitHandler{
 		case EnumTipoItem.Consumivel:
 			Consumir(id);
 
-			//PlayerManager.instance.GetComponent<PlayerStatus> ().Vida += Itens.item [id].Cura;
-			//PlayerManager.instance.GetComponent<Inventario> ().Bolsa.Remove (id);
+			if(Itens.item [id].Cura != 0)
+				PlayerManager.instance.GetComponent<PlayerStatus> ().Vida += Itens.item [id].Cura;
+			if(Itens.item [id].Mana != 0)
+				PlayerManager.instance.GetComponent<PlayerStatus> ().Mana += Itens.item [id].Mana;
+			
+			PlayerManager.instance.GetComponent<Inventario> ().Bolsa.Remove (id);
 			break;
 		}
 		if(info != null)

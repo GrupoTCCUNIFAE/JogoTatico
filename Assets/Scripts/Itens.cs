@@ -9,20 +9,19 @@ public static class Itens{
 	public static Card[] card = new Card[6];
 
 	public static void CarregarItens(){
-		item [0] = new Item ("Cajado de Madeira", "", EnumTipoItem.Arma, 10, 1, 0, 3,  Resources.LoadAll<Sprite>("ItemIcons")[4], Resources.Load<Mesh>("ItemModels/cajado_de_madeira"), 0, 0);
-		item [1] = new Item ("Sobretudo de Mago", "", EnumTipoItem.Armadura, 10, 1, 10, 0,  Resources.LoadAll<Sprite>("ItemIcons")[5], Resources.Load<Mesh>("ItemModels/sobretudo_de_mago"), 0, 1);
-		item [2] = new Item ("Manto de Mago das Sombras", "", EnumTipoItem.Armadura, 50, 1, 15, 0,  Resources.LoadAll<Sprite>("ItemIcons")[5], Resources.Load<Mesh>("ItemModels/manto_de_mago_das_sombras"), 0, 2);
-		item [3] = new Item ("Cajado de Druida", "", EnumTipoItem.Arma, 50, 1, 0, 7, Resources.Load<Sprite>("ItemIcons/cajado_de_druida"), Resources.Load<Mesh>("ItemModels/cajado_de_druida"), 0, 3);
-		item [4] = new Item ("Cajado de Bataha", "", EnumTipoItem.Arma, 100, 1, 0, 15,  Resources.LoadAll<Sprite>("ItemIcons")[4], Resources.Load<Mesh>("ItemModels/cajado_de_batalha"), 0, 4);
-		item [5] = new Item ("Armadura de Mago de Batalha", "", EnumTipoItem.Armadura, 10, 10, 20, 0,  Resources.LoadAll<Sprite>("ItemIcons")[5], Resources.Load<Mesh>("ItemModels/armadura_de_mago_de_batalha"), 0, 5);
-		item [6] = new Item ("Manto de Mago do Deserto", "", EnumTipoItem.Armadura, 10, 1, 15, 0,  Resources.LoadAll<Sprite>("ItemIcons")[5], Resources.Load<Mesh>("ItemModels/manto_de_mago_do_deserto"), 0, 6);
-		item [7] = new Item ("Cajado da Areia", "", EnumTipoItem.Arma, 10, 1, 0, 10,  Resources.LoadAll<Sprite>("ItemIcons")[4], Resources.Load<Mesh>("ItemModels/cajado_da_areia"), 0, 7);
-		item [8] = new Item ("Trapos de Mago Eremita", "", EnumTipoItem.Armadura, 0, 1, 10, 0,  Resources.LoadAll<Sprite>("ItemIcons")[5], Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 0, 8);
-		item [9] = new Item ("Pot de stamina", "", EnumTipoItem.Consumivel, 5, 1, 0, 0, Resources.Load<Sprite>("ItemIcons/Armadura"), Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 0, 9);
-		item [10] = new Item ("Pot de Hp Pequena", "", EnumTipoItem.Consumivel, 8, 3, 0, 0, Resources.Load<Sprite>("ItemIcons/Armadura"), Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 0, 10);
-		item [11] = new Item ("Pot de Hp Grande", "", EnumTipoItem.Consumivel, 19, 1, 0, 0, Resources.Load<Sprite>("ItemIcons/Armadura"), Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 0, 11);
-		item [12] = new Item ("Pot de Mana Pequena", "", EnumTipoItem.Consumivel, 9, 1, 0, 0, Resources.Load<Sprite>("ItemIcons/Armadura"), Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 0, 12);
-		item [13] = new Item ("Pot de Mana Grande", "", EnumTipoItem.Consumivel, 21, 3, 0, 0, Resources.Load<Sprite>("ItemIcons/Armadura"), Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 0, 13);
+		item [0] = new Item ("Cajado de Madeira", "", EnumTipoItem.Arma, 10, 1, 0, 3,  Resources.LoadAll<Sprite>("ItemIcons")[4], Resources.Load<Mesh>("ItemModels/cajado_de_madeira"), 0, 0, 0);
+		item [1] = new Item ("Sobretudo de Mago", "", EnumTipoItem.Armadura, 10, 1, 10, 0,  Resources.LoadAll<Sprite>("ItemIcons")[5], Resources.Load<Mesh>("ItemModels/sobretudo_de_mago"), 0, 1, 0);
+		item [2] = new Item ("Manto de Mago das Sombras", "", EnumTipoItem.Armadura, 50, 1, 15, 0,  Resources.LoadAll<Sprite>("ItemIcons")[5], Resources.Load<Mesh>("ItemModels/manto_de_mago_das_sombras"), 0, 2, 0);
+		item [3] = new Item ("Cajado de Druida", "", EnumTipoItem.Arma, 50, 1, 0, 7, Resources.Load<Sprite>("ItemIcons/cajado_de_druida"), Resources.Load<Mesh>("ItemModels/cajado_de_druida"), 0, 3, 0);
+		item [4] = new Item ("Cajado de Bataha", "", EnumTipoItem.Arma, 100, 1, 0, 15,  Resources.LoadAll<Sprite>("ItemIcons")[4], Resources.Load<Mesh>("ItemModels/cajado_de_batalha"), 0, 4, 0);
+		item [5] = new Item ("Armadura de Mago de Batalha", "", EnumTipoItem.Armadura, 10, 10, 20, 0,  Resources.LoadAll<Sprite>("ItemIcons")[5], Resources.Load<Mesh>("ItemModels/armadura_de_mago_de_batalha"), 0, 5, 0);
+		item [6] = new Item ("Manto de Mago do Deserto", "", EnumTipoItem.Armadura, 10, 1, 15, 0,  Resources.LoadAll<Sprite>("ItemIcons")[5], Resources.Load<Mesh>("ItemModels/manto_de_mago_do_deserto"), 0, 6, 0);
+		item [7] = new Item ("Cajado da Areia", "", EnumTipoItem.Arma, 10, 1, 0, 10,  Resources.LoadAll<Sprite>("ItemIcons")[4], Resources.Load<Mesh>("ItemModels/cajado_da_areia"), 0, 7, 0);
+		item [8] = new Item ("Trapos de Mago Eremita", "", EnumTipoItem.Armadura, 0, 1, 10, 0,  Resources.LoadAll<Sprite>("ItemIcons")[5], Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 0, 8, 0);
+		item [9] = new Item ("Elixir de Vitalidade (Pequeno)", "", EnumTipoItem.Consumivel, 8, 3, 0, 0, Resources.LoadAll<Sprite>("ItemIcons")[6], Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 10, 10, 0);
+		item [10] = new Item ("Elixir de Vitalidade (Grande)", "", EnumTipoItem.Consumivel, 19, 1, 0, 0, Resources.LoadAll<Sprite>("ItemIcons")[6], Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 50, 11, 0);
+		item [11] = new Item ("Elixir de Poder (Pequeno)", "", EnumTipoItem.Consumivel, 9, 1, 0, 0, Resources.LoadAll<Sprite>("ItemIcons")[7], Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 0, 12, 10);
+		item [12] = new Item ("Elixir de Poder (Grande)", "", EnumTipoItem.Consumivel, 21, 3, 0, 0, Resources.LoadAll<Sprite>("ItemIcons")[7], Resources.Load<Mesh>("ItemModels/trapos_de_mago_eremita"), 0, 13, 50);
 	}
 	public static void CarregarMagias(){
 		magia [0] = new Magia ("Fogo", Resources.Load<GameObject> ("Magias/Fogo"),  Resources.LoadAll<Sprite>("ItemIcons")[8], 10, 1, EnumNivel.Tolo, 0, EnumElementos.Fogo);

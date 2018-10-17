@@ -16,8 +16,9 @@ public class Item{
 	private Sprite imagem;
 	private Mesh modelo;
 	private int id;
+	private float mana;
 
-	public Item(string nome, string descricao, EnumTipoItem tipo, float valor, float peso, float defesa, float ataque, Sprite imagem, Mesh modelo, float cura, int id){
+	public Item(string nome, string descricao, EnumTipoItem tipo, float valor, float peso, float defesa, float ataque, Sprite imagem, Mesh modelo, float cura, int id, float mana){
 		this.nome = nome;
 		this.descricao = descricao;
 		this.tipo = tipo;
@@ -29,6 +30,7 @@ public class Item{
 		this.modelo = modelo;
 		this.cura = cura;
 		this.id = id;
+		this.mana = mana;
 	}
 	public string Nome{
 		get{return nome;}
@@ -69,6 +71,10 @@ public class Item{
 	public float Cura{
 		get{return cura;}
 		set{cura = value;}
+	}
+	public float Mana{
+		get{return mana;}
+		set{mana = value;}
 	}
 	public int Id{
 		get{return id;}
