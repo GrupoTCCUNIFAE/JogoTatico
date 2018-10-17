@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b01eb30c7f3e3774b815b85e96396c32
-timeCreated: 1527289173
+guid: ea670a6585770a94ba2fa7545dbf7a9a
+timeCreated: 1539443746
 licenseType: Free
 TrueTypeFontImporter:
   externalObjects: {}
@@ -10,9 +10,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Planewalker
+  fontName: Pixel-Art
   fontNames:
-  - Planewalker
+  - Pixel-Art
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

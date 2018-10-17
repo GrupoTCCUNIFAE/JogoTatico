@@ -38,7 +38,9 @@ public class PlayerXPUI : MonoBehaviour {
 		if (ProcurarProximaMagia (EnumNivel.Adepto))
 			return;
 		if (ProcurarProximaMagia (EnumNivel.Mestre))
-			return;		
+			return;	
+		if (ProcurarProximaMagia (EnumNivel.Arquimago))
+			return;	
 	}
 
 	public void AumentarVelocidade(int value){

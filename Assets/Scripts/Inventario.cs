@@ -36,6 +36,9 @@ public class Inventario : MonoBehaviour {
 			magias = new List<int> ();
 			cards = new List<int> ();
 		}
+
+		if (magias.Count == 0)
+			magias.Add (0);
 	}
 
 	void Update(){

@@ -36,9 +36,13 @@ public class PlayerStatus : ControladorGeral{
 	private void AtualizarStatus(){
 		if (inventario.Armadura != -1) {
 			armadura = Itens.item [inventario.Armadura].Defesa;
+		} else {
+			armadura = 0;
 		}
 		if (inventario.Arma != -1) {
 			ataque = Itens.item [inventario.Arma].Ataque;
+		} else {
+			ataque = 1;
 		}
 	}
 
@@ -48,6 +52,11 @@ public class PlayerStatus : ControladorGeral{
 				vida = value;
 			else
 				vida = vidaMaxima;
+
+			if (value < 0) {
+				vida = vidaMaxima;
+				Destroy (gameObject);
+			}			
 		}
 		get{return vida;}
 	}

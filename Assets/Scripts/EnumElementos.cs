@@ -6,5 +6,6 @@ public enum EnumElementos{
     Fogo,
     Agua,
     Terra,
-    Ar
+    Ar,
+	Eletricidade
 }

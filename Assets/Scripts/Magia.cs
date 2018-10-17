@@ -11,8 +11,9 @@ public class Magia{
 	private float multiplicadorDeMana;
 	private EnumNivel nivel;
 	private int id;
+	private EnumElementos elemento;
 
-	public Magia(string nome, GameObject prefab, Sprite imagem, float dano, float multiplicadorDeMana, EnumNivel nivel, int id){
+	public Magia(string nome, GameObject prefab, Sprite imagem, float dano, float multiplicadorDeMana, EnumNivel nivel, int id, EnumElementos elemento){
 		this.nome = nome;
 		this.prefab = prefab;
 		this.imagem = imagem;
@@ -46,6 +47,9 @@ public class Magia{
 	}
 	public int Id{
 		get{ return id; }
+	}
+	public EnumElementos Elemento{
+		get{ return elemento; }
 	}
 }
 

@@ -13,6 +13,7 @@ public class ItemInterativel : MonoBehaviour {
 	void Start(){
 		nomeGameObj = transform.GetChild (0).gameObject;
 		nomeTxtMesh = nomeGameObj.GetComponent<TextMesh> ();
+		Itens.CarregarCards ();
 		switch (tipo) {
 		case EnumTipoInterativel.Item:
 			nomeTxtMesh.text = Itens.item [IDDoItem].Nome;

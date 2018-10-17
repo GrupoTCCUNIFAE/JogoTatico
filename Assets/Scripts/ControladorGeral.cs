@@ -10,17 +10,16 @@ public class ControladorGeral : MonoBehaviour {
 	public float ataque = 2f;
 	public float defesa = 100f;
 	public float armadura = 0f;
-    private EnumElementos[] resistencias = new EnumElementos[15];
-    private EnumElementos[] fraquezas = new EnumElementos[15];
+	public EnumElementos[] resistencias = new EnumElementos[15];
+	public EnumElementos[] fraquezas = new EnumElementos[15];
     private EnumElementos elemento;
-    private int x;
 
     public float Vida{
 		get{ return vida; }
 		set{
 			if (value < 0) {
 				vida = 0;
-				SceneManager.LoadScene(4);
+				Destroy (gameObject);
 			}
 			else
 				vida = value;
@@ -44,16 +43,7 @@ public class ControladorGeral : MonoBehaviour {
     }
 	public float Ataque{
 		get{return ataque;}
-        set{
-            if (elemento == fraquezas[x])
-            {
-                ataque = ataque * 2;
-            }
-            if (elemento == resistencias[x])
-            {
-                ataque = ataque / 2;
-            }
-        }
+		set{ataque = value;}
 	}
     public EnumElementos Elemento{
         get { return elemento; }

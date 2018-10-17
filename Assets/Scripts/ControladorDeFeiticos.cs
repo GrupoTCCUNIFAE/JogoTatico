@@ -47,7 +47,7 @@ public class ControladorDeFeiticos : MonoBehaviour {
 			feiticos [slot] = new Feitico ();
 			feiticos [slot].Acoes = new List<Acao> ();
 			feiticos [slot].donoDoFeitico = gameObject;
-			feiticos [slot].prefabFeitico = Itens.magia [elemento].Prefab;
+			feiticos [slot].elemento = elemento;
 
 			string algoritmoDaMagia = PlayerPrefs.GetString ("FeiticoSlot" + slot);
 

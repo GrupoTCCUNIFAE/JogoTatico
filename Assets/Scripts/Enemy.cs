@@ -24,7 +24,12 @@ public class Enemy : Interactable
 		ControladorGeral playerCombat = playerManager.player.GetComponent<ControladorGeral>();
         if (playerCombat != null)
         {
-			playerCombat.Vida -= myStats.Ataque;
+			float ataque = 0;
+
+			if (myStats.Ataque - playerCombat.Armadura > 0)
+				ataque = myStats.Ataque - playerCombat.Armadura;
+
+			playerCombat.Vida -= ataque;
         }
     }
 

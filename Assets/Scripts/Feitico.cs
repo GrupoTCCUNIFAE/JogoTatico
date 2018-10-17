@@ -7,7 +7,7 @@ public class Feitico{
 	
 	public int maximoDeAcoes;
 	public GameObject donoDoFeitico;
-	public GameObject prefabFeitico;
+	public int elemento;
 
 	private List<Acao> acoes = new List<Acao>();
 	private int acaoAtual = 0;
@@ -27,7 +27,7 @@ public class Feitico{
 			if (!instanciado) {
 				instanciado = true;
 				Vector3 posicaoFeitico = new Vector3 (donoDoFeitico.transform.position.x, donoDoFeitico.transform.position.y, donoDoFeitico.transform.position.z);
-				feitico = GameObject.Instantiate (prefabFeitico, posicaoFeitico, donoDoFeitico.transform.rotation);
+				feitico = GameObject.Instantiate (Itens.magia[elemento].Prefab, posicaoFeitico, donoDoFeitico.transform.rotation);
 				foreach (Acao acao in acoes) {
 					acao.DonoDaAcao = feitico;
 				}
@@ -40,7 +40,23 @@ public class Feitico{
 					FinalizarFeitico ();
 				}
 				if (feitico.GetComponent<Verificador> ().ColisaoComInimigo) {
-					GameObject.Destroy (feitico.GetComponent<Verificador> ().Inimigo);
+					ControladorGeral inimigo = feitico.GetComponent<Verificador> ().Inimigo.GetComponent<ControladorGeral> ();
+					int fra = 1, res = 1;
+
+					foreach (EnumElementos fraqueza in inimigo.Fraquezas) {
+						if (fraqueza == Itens.magia [elemento].Elemento) {
+							fra *= 2;
+							break;
+						}
+					}
+					foreach (EnumElementos resistencia in inimigo.Resistencia) {
+						if (resistencia == Itens.magia [elemento].Elemento) {
+							res *= 2;
+							break;
+						}
+					}
+
+					inimigo.Vida -= (Itens.magia[elemento].Dano/res)*fra;
 					FinalizarFeitico ();
 				}
 			}
