@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: 2a2a6c2f94e02564fb84dd3da9d4f98c
-timeCreated: 1538332404
+guid: a1d4113c508847e428d86b1ed62c0258
+timeCreated: 1538332405
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: arvore_1
+    100000: inimigo_3
     100002: //RootNode
-    400000: arvore_1
+    400000: inimigo_3
     400002: //RootNode
     2100000: palette
-    2300000: arvore_1
-    3300000: arvore_1
-    4300000: arvore_1
+    2300000: inimigo_3
+    3300000: inimigo_3
+    4300000: inimigo_3
   externalObjects: {}
   materials:
     importMaterials: 1

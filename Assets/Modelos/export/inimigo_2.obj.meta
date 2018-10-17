@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: 081e071e529cc9b4e8080096156352ff
-timeCreated: 1537479140
+guid: f0351668488ba0344a827cb0598912fe
+timeCreated: 1538332405
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: default
+    100000: inimigo_2
     100002: //RootNode
-    400000: default
+    400000: inimigo_2
     400002: //RootNode
     2100000: palette
-    2300000: default
-    3300000: default
-    4300000: default
+    2300000: inimigo_2
+    3300000: inimigo_2
+    4300000: inimigo_2
   externalObjects: {}
   materials:
     importMaterials: 1
