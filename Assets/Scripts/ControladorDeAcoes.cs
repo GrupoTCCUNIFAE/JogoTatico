@@ -6,6 +6,7 @@ public class ControladorDeAcoes : MonoBehaviour {
 
 	public GameObject interfaces;
 	public Camera cam;
+	public float normalTime = 1;
 
 	private ControladorDeFeiticos controladorDeFeiticos;
 	private Inventario inventario;
@@ -27,7 +28,7 @@ public class ControladorDeAcoes : MonoBehaviour {
 				GetComponent<RotacaoJogador> ().enabled = true;
 				Camera.allCameras [0].cullingMask = -1;
 				cam.fieldOfView = 60;
-				Time.timeScale = 1;
+				
 			} else {
 				DesativarInterfaces ();
 				GetInterface ("Inventario").SetActive (true);
@@ -42,7 +43,7 @@ public class ControladorDeAcoes : MonoBehaviour {
 				DesativarInterfaces ();
 				GetInterface ("PlayerGUI").SetActive (true);
 				GetComponent<RotacaoJogador> ().enabled = true;
-				Time.timeScale = 1;
+				Time.timeScale = normalTime;
 			} else {
 				DesativarInterfaces ();
 				GetInterface ("Cards").SetActive (true);
@@ -55,7 +56,7 @@ public class ControladorDeAcoes : MonoBehaviour {
 		}
 		if (!InterfaceAtiva ()) {
 			GetInterface ("PlayerGUI").gameObject.SetActive (true);
-			Time.timeScale = 1;
+			Time.timeScale = normalTime;
 		}
 	}
 
@@ -81,7 +82,7 @@ public class ControladorDeAcoes : MonoBehaviour {
 		if (editor.gameObject.activeSelf) {
 			DesativarInterfaces ();
 			GetInterface ("PlayerGUI").SetActive (true);
-			Time.timeScale = 1;
+			Time.timeScale = normalTime;
 		} else {
 			DesativarInterfaces ();
 			editor.GetComponentsInChildren<CriaFeitico> () [0].Slot = slot;

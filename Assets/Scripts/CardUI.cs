@@ -9,12 +9,13 @@ public class CardUI : MonoBehaviour {
 	public GameObject cardMeio, cardEsquerda, cardDireita;
 
 	private int cardAtual = 0;
-	private Text cardMeioText, cardEsquerdaText, cardDireitaText;
+	private Text cardMeioText, cardEsquerdaText, cardDireitaText, cardMeioDesc;
 	private Image cardMeioSprite, cardEsquerdaSprite, cardDireitaSprite;
 	private Inventario inventario;
 
 	void Start () {
-		cardMeioText = cardMeio.GetComponentInChildren<Text> ();
+		cardMeioText = cardMeio.GetComponentsInChildren<Text> ()[0];
+		cardMeioDesc = cardMeio.GetComponentsInChildren<Text> ()[1];
 		cardDireitaText = cardDireita.GetComponentInChildren<Text> ();
 		cardEsquerdaText = cardEsquerda.GetComponentInChildren<Text> ();
 		cardMeioSprite = cardMeio.transform.GetComponentsInChildren<Image> ()[2];
@@ -37,6 +38,7 @@ public class CardUI : MonoBehaviour {
 			Card card = Itens.card [inventario.Cards [id]];
 			cardMeioSprite.sprite = card.Imagem;
 			cardMeioText.text = MontaTexto(card);
+			cardMeioDesc.text = card.Descricao;
 		} else {
 			cardMeio.SetActive (false);
 		}

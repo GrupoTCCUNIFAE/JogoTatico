@@ -6,13 +6,14 @@ public class Inventario : MonoBehaviour {
 
 	public MeshFilter armaduraMesh;
 	public MeshFilter armaMesh;
-
+	public GameObject artefatoGO;
 	private List<int> itens;
 	private List<int> magias;
 	private List<int> cards;
 	private int[] magiasPreparadas = new int[10];
 	private int armadura = -1;
 	private int arma = -1;
+	private int artefato = -1;
 	private Controle controle;
 	private Mesh playerSemArmadura;
 
@@ -31,6 +32,7 @@ public class Inventario : MonoBehaviour {
 			magias = controle.Data.magias;
 			cards = controle.Data.cards;
 			magiasPreparadas = controle.Data.magiasPreparadas;
+			artefato = controle.Data.artefato;
 		} else {
 			itens = new List<int> ();
 			magias = new List<int> ();
@@ -71,6 +73,10 @@ public class Inventario : MonoBehaviour {
 	}
 
 	public bool AdicionarItem(int id){
+		foreach (int item in itens) {
+			if (item == id)
+				return false;
+		}
 		itens.Add (id);
 		return true;
 	}
@@ -107,11 +113,26 @@ public class Inventario : MonoBehaviour {
 		}
 	}
 
+	public int Artefato{
+		get{return artefato;}
+		set{
+			if (value != -1) {
+				if (artefato != -1) {
+					itens.Add (artefato);
+				}
+				itens.Remove (value);
+			} else {
+				itens.Add (artefato);
+			}
+
+			artefato = value;
+		}
+	}
+
 	public List<int> Magias{
 		get{ return magias; }
 		set{ magias = value; }
 	}
-
 	public int[] MagiasPreparadas{
 		get{ return magiasPreparadas; }
 		set{ magiasPreparadas = value; }

@@ -10,6 +10,7 @@ public class InventarioUI : MonoBehaviour {
 	public GameObject info;
 	public Image armadura;
 	public Image arma;
+	public Image artefato;
 
 	private Inventario player;
 	private ScrollRect scrollRect;
@@ -49,6 +50,14 @@ public class InventarioUI : MonoBehaviour {
 		} else {
 			armadura.sprite = armaduraDesequipada;
 			armadura.color = new Color32 (0, 0, 0, 65);
+		}
+
+		if (player.Artefato != -1) {
+			artefato.sprite = Itens.item [player.Artefato].Imagem;
+			artefato.color = Color.white;
+		} else {
+			artefato.sprite = armaduraDesequipada;
+			artefato.color = new Color32 (0, 0, 0, 65);
 		}
 
 		for (int cnt = 0; cnt < scrollRect.content.transform.childCount; cnt++) {

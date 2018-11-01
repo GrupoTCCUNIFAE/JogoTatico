@@ -6,5 +6,6 @@ public enum EnumTipoItem{
 	Armadura,
 	Arma,
 	Consumivel,
-	QuestItem
+	QuestItem,
+	Artefato
 }

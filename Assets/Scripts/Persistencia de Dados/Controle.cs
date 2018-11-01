@@ -37,6 +37,7 @@ public class Controle : MonoBehaviour {
 		data.magias = inv.Magias;
 		data.magiasPreparadas = inv.MagiasPreparadas;
 		data.cards = inv.Cards;
+		data.artefato = inv.Artefato;
 
 		data.xpAtual = jogador.xp.XpAtual;
 		data.level = jogador.xp.Level;

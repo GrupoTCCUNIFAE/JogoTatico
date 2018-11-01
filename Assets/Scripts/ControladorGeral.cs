@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ControladorGeral : MonoBehaviour {
 
+	public string nome;
 	public float vida = 100f;
 	public float mana = 100f;
 	public float ataque = 2f;
@@ -12,7 +13,7 @@ public class ControladorGeral : MonoBehaviour {
 	public float armadura = 0f;
 	public EnumElementos[] resistencias = new EnumElementos[15];
 	public EnumElementos[] fraquezas = new EnumElementos[15];
-    private EnumElementos elemento;
+	public EnumElementos elemento;
 
     public float Vida{
 		get{ return vida; }

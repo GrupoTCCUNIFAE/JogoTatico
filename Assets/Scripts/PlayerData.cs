@@ -20,4 +20,5 @@ public class PlayerData{
 	public float xpAtual;
 	public int level;
 	public int velocidade;
+	public int artefato;
 }

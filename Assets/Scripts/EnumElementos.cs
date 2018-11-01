@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum EnumElementos{
+	Comum,
     Fogo,
     Agua,
     Terra,
     Ar,
-	Eletricidade
+	Eletricidade,
+	Veneno,
+	Escuridao,
+	Gelo
 }

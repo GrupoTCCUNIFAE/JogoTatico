@@ -19,8 +19,6 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler,  IPointerExitHandler{
 			PlayerManager.instance.GetComponent<Inventario> ().Arma = id;
 			break;
 		case EnumTipoItem.Consumivel:
-			Consumir(id);
-
 			if(Itens.item [id].Cura != 0)
 				PlayerManager.instance.GetComponent<PlayerStatus> ().Vida += Itens.item [id].Cura;
 			if(Itens.item [id].Mana != 0)
@@ -28,17 +26,29 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler,  IPointerExitHandler{
 			
 			PlayerManager.instance.GetComponent<Inventario> ().Bolsa.Remove (id);
 			break;
+		case EnumTipoItem.Artefato:
+			PlayerManager.instance.GetComponent<Inventario> ().Artefato = id;
+			System.Type type = Itens.item [id].Efeito.GetType ();
+			Component comp = PlayerManager.instance.GetComponent<Inventario> ().artefatoGO.AddComponent (type);
+			((Efeito)comp).id = id;
+			break;
 		}
 		if(info != null)
 			info.SetActive (false);
 		PlayerManager.instance.GetComponent<InterfaceManager> ().inventarioUI.AtualizarInventario ();
 	}
 
-	public void Desequipar(bool arma){
-		if (arma) {
+	public void DesequiparItem(int tipo){
+		switch(tipo){
+		case 1:
 			PlayerManager.instance.GetComponent<Inventario> ().Arma = -1;
-		} else {
+			break;
+		case 2:
 			PlayerManager.instance.GetComponent<Inventario> ().Armadura = -1;
+			break;
+		case 3:
+			PlayerManager.instance.GetComponent<Inventario> ().Artefato = -1;
+			break;
 		}
 		PlayerManager.instance.GetComponent<InterfaceManager> ().inventarioUI.AtualizarInventario ();
 	}
@@ -64,8 +74,11 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler,  IPointerExitHandler{
 			if(Itens.item[id].Defesa != 0){
 				texto += "\nDefesa: " + Itens.item [id].Defesa;
 			}
-
-			texto += "\nValor: " + Itens.item [id].Valor;
+			if(Itens.item[id].Descricao != ""){
+				texto += "\n" + Itens.item [id].Descricao;
+			}
+			if(Itens.item[id].Valor != 0)
+				texto += "\nValor: " + Itens.item [id].Valor;
 			infoText.text = texto;
 			info.SetActive (true);
 
@@ -75,10 +88,5 @@ public class ItemUI : MonoBehaviour, IPointerEnterHandler,  IPointerExitHandler{
 	{
 		if(info != null)
 			info.SetActive (false);
-	}
-
-	public void Consumir(int id){
-		//PlayerManager.instance.GetComponent<PlayerStatus> ().Vida += Itens.item [id].Cura;
-		//PlayerManager.instance.GetComponent<Inventario> ().Bolsa.Remove (id);
 	}
 }

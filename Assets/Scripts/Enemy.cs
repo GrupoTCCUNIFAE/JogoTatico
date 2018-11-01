@@ -21,7 +21,7 @@ public class Enemy : Interactable
     public override void Interact()
     {
         base.Interact();
-		ControladorGeral playerCombat = playerManager.player.GetComponent<ControladorGeral>();
+		PlayerStatus playerCombat = playerManager.player.GetComponent<PlayerStatus>();
         if (playerCombat != null)
         {
 			float ataque = 0;
@@ -29,7 +29,7 @@ public class Enemy : Interactable
 			if (myStats.Ataque - playerCombat.Armadura > 0)
 				ataque = myStats.Ataque - playerCombat.Armadura;
 
-			playerCombat.Vida -= ataque;
+			playerCombat.TomarDano(ataque, myStats.Elemento);
         }
     }
 

@@ -9,6 +9,7 @@ public class PlayerStatus : ControladorGeral{
 	private Inventario inventario;
 	private float vidaMaxima;
 	private float manaMaxima;
+	private EnumElementos imunidade;
 
 	void Start () {
 		inventario = PlayerManager.instance.GetComponent<Inventario> ();
@@ -90,5 +91,31 @@ public class PlayerStatus : ControladorGeral{
 	public int Velocidade{
 		set{ velocidadeDaMagia = value; }
 		get{ return velocidadeDaMagia; }
+	}
+
+	public void TomarDano(float dano, EnumElementos tipo){
+		float danoTotal = dano;
+
+		foreach (EnumElementos elemento in this.resistencias) {
+			if (elemento == tipo) {
+				danoTotal = dano / 2;
+			}
+		}
+
+		foreach (EnumElementos elemento in this.fraquezas) {
+			if (elemento == tipo) {
+				danoTotal = dano * 2;
+			}
+		}
+
+		if (tipo == imunidade)
+			danoTotal = 0;
+
+		Vida -= danoTotal;
+	}
+
+	public EnumElementos Imunidade{
+		get{ return imunidade; }
+		set{ imunidade = value; }
 	}
 }
