@@ -21,4 +21,8 @@ public class PlayerData{
 	public int level;
 	public int velocidade;
 	public int artefato;
+	public string fase;
+	public float x;
+	public float y;
+	public float z;
 }

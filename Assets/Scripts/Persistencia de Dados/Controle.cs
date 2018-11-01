@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using System;
-using System.Runtime.Serialization.Formatters.Binary; // bibilioteca para salvar em arquivo binario
+using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine; // bibilioteca para salvar em arquivo binario
 using System.IO;
+using UnityEngine.SceneManagement;
 
 public class Controle : MonoBehaviour {
 	
@@ -39,6 +40,13 @@ public class Controle : MonoBehaviour {
 		data.cards = inv.Cards;
 		data.artefato = inv.Artefato;
 
+		Vector3 posicao = PlayerManager.instance.player.transform.position;
+
+		data.fase = SceneManager.GetActiveScene ().name;
+		data.x = posicao.x;
+		data.y = posicao.y;
+		data.z = posicao.z;
+
 		data.xpAtual = jogador.xp.XpAtual;
 		data.level = jogador.xp.Level;
 
@@ -55,6 +63,8 @@ public class Controle : MonoBehaviour {
 
 			playerData = (PlayerData)bf.Deserialize (file);
 			file.Close ();
+
+			PlayerManager.instance.player.transform.position = new Vector3 (playerData.x, playerData.y, playerData.z);
 		}
 	}
 
