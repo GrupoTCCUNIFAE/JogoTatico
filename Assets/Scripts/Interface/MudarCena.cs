@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MudarCena : MonoBehaviour {
 
-	public void CarregarCena(int cena){
-		SceneManager.LoadScene(cena);
+	public void CarregarCena(string cena){
+		GameObject.Find ("SceneManager").GetComponent<SceneController> ().LoadScene (cena);
 	}
 
 	public void Sair(){

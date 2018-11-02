@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\Controls.cs" />
      <Compile Include="Assets\Scripts\CriadorDeBlocosProgramaveis.cs" />
      <Compile Include="Assets\Scripts\CuboDePuzzle.cs" />
+     <Compile Include="Assets\Scripts\DicaAleatoria.cs" />
      <Compile Include="Assets\Scripts\Efeito.cs" />
      <Compile Include="Assets\Scripts\Efeitos\BrasaoDeArdhas.cs" />
      <Compile Include="Assets\Scripts\Efeitos\CaixaDeTardius.cs" />
@@ -111,6 +112,7 @@
      <Compile Include="Assets\Scripts\MagiasUI.cs" />
      <Compile Include="Assets\Scripts\MagiaUI.cs" />
      <Compile Include="Assets\Scripts\MonstronomiconUI.cs" />
+     <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Persistencia de Dados\Controle.cs" />
      <Compile Include="Assets\Scripts\Persistencia de Dados\UIControle.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />

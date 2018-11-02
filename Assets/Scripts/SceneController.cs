@@ -16,9 +16,9 @@ public class SceneController : Singleton<SceneController>{
 			Itens.CarregarCards ();
 			Itens.CarregarItens ();
 			Itens.CarregarMagias ();
-			comecarCarregamento = false;
+			comecarCarregamento = true;
 			carregando = false;
-			nomeProximaCena = "";
+			nomeProximaCena = "MainMenu";
 			tempoMinimoLoad = 3;
 		}
 	}
@@ -56,7 +56,7 @@ public class SceneController : Singleton<SceneController>{
 			float percentual = (op.progress / 0.9f) * 100;
 
 			if(GameObject.Find("Barra").GetComponent<Slider>() != null)
-				GameObject.Find("Barra").GetComponent<Slider>().value = percentual;
+				GameObject.Find("Barra").GetComponent<Slider>().value = percentual/100;
 
 			if (GameObject.Find("Percentual").GetComponent<Text>() != null)
 				GameObject.Find("Percentual").GetComponent<Text>().text = String.Format("{0:0}", percentual) + "%";

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class Itens{
 
-	public static Item[] item = new Item[50];
+	public static Item[] item = new Item[21];
 	public static Magia[] magia = new Magia[3];
 	public static Card[] card = new Card[7];
 
@@ -28,7 +28,7 @@ public static class Itens{
 		item [16] = new Item (16, "Crânio de Nosferus", "Crânio profanado de um vampiro ancestral", new CranioDeNosferus(), Resources.LoadAll<Sprite>("ItemIcons")[15]);
 		item [17] = new Item (17, "Brasão de Ardhas", "Um amuleto de prata com um brasão esculpido", new BrasaoDeArdhas (), Resources.LoadAll<Sprite> ("ItemIcons") [16]);
 		item [18] = new Item (18, "Caixa de Tardius", "Uma misteriosa caixa azul de madeira, niguém sabe de onde veio mas as lendas contam que ela é de outra dimensão", new CaixaDeTardius (), Resources.LoadAll<Sprite> ("ItemIcons") [17]);
-		item [19] = new Item (19, "Broche de Navih", "", new Fada (), Resources.LoadAll<Sprite> ("ItemIcons") [18]);
+		item [19] = new Item (19, "Broche de Navih", "Broche de uma fada irritante", new Fada (), Resources.LoadAll<Sprite> ("ItemIcons") [18]);
 		item [20] = new Item (20, "Olho de Zathanar", "Olho do lendario beholder Zathanar", new OlhoDeZathanar (), Resources.LoadAll<Sprite> ("ItemIcons") [19]);
 	}
 	public static void CarregarMagias(){

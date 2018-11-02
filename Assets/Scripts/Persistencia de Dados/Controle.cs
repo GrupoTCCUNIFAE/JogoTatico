@@ -71,8 +71,4 @@ public class Controle : MonoBehaviour {
 	public PlayerData Data{
 		get{return playerData;}
 	}
-
-	void OnApplicationQuit(){
-		Salvar();
-	}
 }
